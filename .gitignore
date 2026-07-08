@@ -1,0 +1,28 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment
+.env
+.env*
+.env.production
+
+# macOS
+.DS_Store
+
+# editor
+.idea/
+
+# hand-written reference version (kept locally, not committed)
+legacy/
+
+# platform CLI folders
+.vercel
