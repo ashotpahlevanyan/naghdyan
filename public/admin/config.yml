@@ -1,0 +1,167 @@
+# Sveltia CMS configuration — content manager for naghdyan.com
+# Served at /admin. Fields mirror src/content.config.ts; every visible string is
+# bilingual { en, ru }. Auth uses the GitHub OAuth handler in api/ (docs/deployment.md).
+
+backend:
+  name: github
+  repo: ashotpahlevanyan/naghdyan
+  branch: main
+  # CMS opens `${base_url}/${auth_endpoint}` → https://naghdyan.com/auth
+  # (rewritten to /api/auth by vercel.json). Callback is /callback.
+  base_url: https://naghdyan.com
+  auth_endpoint: auth
+
+# Local editing without GitHub: run `npm run cms:proxy`, then open
+# http://localhost:4321/admin while `npm run dev` is running.
+local_backend: true
+
+# Where uploaded images are stored / referenced from.
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  # -------------------------------------------------------------- BOOKS
+  - name: books
+    label: Books
+    label_singular: Book
+    folder: src/content/books
+    extension: yaml
+    format: yaml
+    create: true
+    slug: '{{fields.slug}}'
+    summary: '{{fields.title.en}}'
+    fields:
+      - name: slug
+        label: URL slug
+        widget: string
+        hint: Lowercase words with hyphens. Becomes the page URL /books/<slug>.
+      - name: order
+        label: Sort order
+        widget: number
+        value_type: int
+        default: 1
+        hint: Lower numbers show first.
+      - name: title
+        label: Title
+        widget: object
+        fields:
+          - { name: en, label: English, widget: string }
+          - { name: ru, label: Русский, widget: string }
+      - name: subtitle
+        label: Subtitle
+        widget: object
+        required: false
+        fields:
+          - { name: en, label: English, widget: string, required: false }
+          - { name: ru, label: Русский, widget: string, required: false }
+      - { name: year, label: Year, widget: string }
+      - { name: cover, label: Cover image, widget: image, required: false }
+      - name: images
+        label: Gallery images (slider)
+        widget: list
+        required: false
+        field: { name: image, label: Image, widget: image }
+      - name: facts
+        label: Facts (chips)
+        widget: list
+        required: false
+        fields:
+          - { name: en, label: English, widget: string }
+          - { name: ru, label: Русский, widget: string }
+      - { name: buyLink, label: Buy link (URL), widget: string, required: false }
+      - name: description
+        label: Description (one entry per paragraph)
+        widget: list
+        fields:
+          - { name: en, label: English, widget: text }
+          - { name: ru, label: Русский, widget: text }
+
+  # ----------------------------------------------------------- ARTICLES
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: src/content/articles
+    extension: yaml
+    format: yaml
+    create: true
+    slug: '{{fields.slug}}'
+    summary: '{{fields.title.en}}'
+    fields:
+      - name: slug
+        label: File slug
+        widget: string
+        hint: Lowercase words with hyphens (filename only).
+      - name: order
+        label: Sort order
+        widget: number
+        value_type: int
+        default: 1
+      - name: title
+        label: Title
+        widget: object
+        fields:
+          - { name: en, label: English, widget: string }
+          - { name: ru, label: Русский, widget: string }
+      - name: source
+        label: Source
+        widget: object
+        required: false
+        fields:
+          - { name: en, label: English, widget: string, required: false }
+          - { name: ru, label: Русский, widget: string, required: false }
+      - { name: date, label: Date / year, widget: string }
+      - { name: url, label: Link URL, widget: string, default: '#' }
+
+  # ----------------------------------------------------------- LECTURES
+  - name: lectures
+    label: Lectures
+    label_singular: Lecture
+    folder: src/content/lectures
+    extension: yaml
+    format: yaml
+    create: true
+    slug: '{{fields.slug}}'
+    summary: '{{fields.title.en}}'
+    fields:
+      - name: slug
+        label: File slug
+        widget: string
+        hint: Lowercase words with hyphens (filename only).
+      - name: order
+        label: Sort order
+        widget: number
+        value_type: int
+        default: 1
+      - name: title
+        label: Title
+        widget: object
+        fields:
+          - { name: en, label: English, widget: string }
+          - { name: ru, label: Русский, widget: string }
+      - name: description
+        label: Description
+        widget: object
+        required: false
+        fields:
+          - { name: en, label: English, widget: string, required: false }
+          - { name: ru, label: Русский, widget: string, required: false }
+      - name: tag
+        label: Tag (e.g. "Lecture · 2024")
+        widget: object
+        required: false
+        fields:
+          - { name: en, label: English, widget: string, required: false }
+          - { name: ru, label: Русский, widget: string, required: false }
+      - name: video
+        label: Video
+        widget: object
+        fields:
+          - name: type
+            label: Platform
+            widget: select
+            options: [youtube, vimeo]
+            default: youtube
+          - name: id
+            label: Video ID
+            widget: string
+            hint: The ID only — youtu.be/<ID> or vimeo.com/<ID>.

@@ -67,17 +67,22 @@ files without GitHub auth. Point the CMS `local_backend` at it during dev.
 
 ---
 
-## 3. Sveltia CMS front-end (not built yet)
+## 3. Sveltia CMS front-end (built)
 
-Still to add (tracked separately):
+Already in the repo:
 
-- [ ] `public/admin/index.html` — loads Sveltia CMS.
-- [ ] `public/admin/config.yml` — `backend: { name: github, repo: ashotpahlevanyan/naghdyan, base_url: https://naghdyan.com }`
-      plus collections that mirror `src/content.config.ts`
-      (`books`, `articles`, `lectures`, each field bilingual `{ en, ru }`).
+- `public/admin/index.html` — loads Sveltia CMS.
+- `public/admin/config.yml` — GitHub backend + `books` / `articles` /
+  `lectures` collections that mirror `src/content.config.ts`, each field
+  bilingual `{ en, ru }`.
 
-There is no "Sveltia account" — it is static JS served from this repo that
-commits back to this repo. Fully self-contained.
+Reach it at **`https://naghdyan.com/admin`**. Login needs the OAuth App and env
+vars from §2. Editors get a form UI; saving commits YAML to `src/content/…` on
+`main`, which triggers a Vercel rebuild — the edit is live in ~1 min.
+
+New entries are named from the **URL slug** field; existing entries already carry
+a `slug:` matching their filename. There is no "Sveltia account" — it is static
+JS served from this repo that commits back to this repo. Fully self-contained.
 
 ---
 
