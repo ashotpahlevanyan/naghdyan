@@ -8,8 +8,11 @@ import Books from '@components/Books.astro';
 import Articles from '@components/Articles.astro';
 import Lectures from '@components/Lectures.astro';
 import Contact from '@components/Contact.astro';
+import { getSite } from '@lib/content';
+
+const site = await getSite();
 ---
-<Base title="Ruben Naghdyan — Scientist, Psychologist, Founder of Psychoontology">
+<Base title={site.seo.title}>
   <span id="top"></span>
   <Hero />
   <About />

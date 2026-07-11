@@ -20,6 +20,206 @@ media_folder: public/assets/uploads
 public_folder: /assets/uploads
 
 collections:
+  # ------------------------------------------------------- SITE CONTENT
+  # Singleton settings files: branding/contact and the homepage prose.
+  - name: settings
+    label: Site content
+    files:
+      - name: site
+        label: Branding & contact
+        file: src/content/settings/site.yaml
+        fields:
+          - name: brand
+            label: Brand name
+            widget: object
+            fields:
+              - { name: en, label: English, widget: string }
+              - { name: ru, label: Русский, widget: string }
+          - { name: logo, label: Logo image, widget: image, required: false, hint: "Optional. Falls back to the built-in ‘N’ mark." }
+          - { name: favicon, label: Favicon, widget: image, required: false, hint: "Optional browser-tab icon." }
+          - { name: portrait, label: Portrait photo, widget: image, required: false, hint: "Shown in the hero. Optional." }
+          - name: seo
+            label: SEO
+            widget: object
+            fields:
+              - { name: title, label: Page title, widget: string }
+              - { name: description, label: Meta description, widget: text }
+          - name: contact
+            label: Contact methods
+            widget: object
+            fields:
+              - { name: email, label: Email address, widget: string, required: false }
+              - { name: telegram, label: Telegram URL, widget: string, required: false, hint: "Full https:// link. Leave empty to hide the button." }
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - name: rights
+                label: Rights text
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+
+      - name: home
+        label: Homepage text
+        file: src/content/settings/home.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - name: eyebrow
+                label: Eyebrow
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: lede
+                label: Lede
+                widget: object
+                hint: "Use **bold** and *italic* for emphasis."
+                fields:
+                  - { name: en, label: English, widget: text }
+                  - { name: ru, label: Русский, widget: text }
+              - name: tags
+                label: Tags
+                widget: list
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: ctaPrimary
+                label: Primary button
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: ctaSecondary
+                label: Secondary button
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+          - name: about
+            label: About
+            widget: object
+            fields:
+              - name: kicker
+                label: Kicker
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: heading
+                label: Heading
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: body
+                label: Paragraphs
+                widget: list
+                hint: "One entry per paragraph. **bold** / *italic* supported."
+                fields:
+                  - { name: en, label: English, widget: text }
+                  - { name: ru, label: Русский, widget: text }
+          - name: focus
+            label: Areas of focus
+            widget: object
+            fields:
+              - name: kicker
+                label: Kicker
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: heading
+                label: Heading
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: cards
+                label: Cards
+                widget: list
+                fields:
+                  - { name: icon, label: Icon glyph, widget: string, hint: "A single character, e.g. Ψ ◈ ∞" }
+                  - name: sub
+                    label: Label
+                    widget: object
+                    fields:
+                      - { name: en, label: English, widget: string }
+                      - { name: ru, label: Русский, widget: string }
+                  - name: title
+                    label: Title
+                    widget: object
+                    fields:
+                      - { name: en, label: English, widget: string }
+                      - { name: ru, label: Русский, widget: string }
+                  - name: body
+                    label: Body
+                    widget: object
+                    fields:
+                      - { name: en, label: English, widget: text }
+                      - { name: ru, label: Русский, widget: text }
+          - name: psychoontology
+            label: Psychoontology
+            widget: object
+            fields:
+              - name: kicker
+                label: Kicker
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: heading
+                label: Heading
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: intro
+                label: Intro
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: text }
+                  - { name: ru, label: Русский, widget: text }
+              - name: quote
+                label: Pull quote
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: text }
+                  - { name: ru, label: Русский, widget: text }
+              - name: points
+                label: Points
+                widget: list
+                hint: "Start each with a **bold** lead word."
+                fields:
+                  - { name: en, label: English, widget: text }
+                  - { name: ru, label: Русский, widget: text }
+          - name: contact
+            label: Contact section
+            widget: object
+            fields:
+              - name: kicker
+                label: Kicker
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: heading
+                label: Heading
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: string }
+                  - { name: ru, label: Русский, widget: string }
+              - name: body
+                label: Body
+                widget: object
+                fields:
+                  - { name: en, label: English, widget: text }
+                  - { name: ru, label: Русский, widget: text }
+
   # -------------------------------------------------------------- BOOKS
   - name: books
     label: Books

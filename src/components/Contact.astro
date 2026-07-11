@@ -1,18 +1,32 @@
+---
+import { getSite, getHome } from '@lib/content';
+
+const site = await getSite();
+const { contact } = await getHome();
+const { email, telegram } = site.contact;
+---
 <section class="band soft" id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
-      <div class="kicker" data-lang-en>Contact</div><div class="kicker" data-lang-ru>Контакты</div>
-      <h2 data-lang-en>Let's work or think together</h2><h2 data-lang-ru>Давайте работать или мыслить вместе</h2>
-      <p class="body" data-lang-en>For consultations, collaboration, lectures, or questions about
-        psychoontology — reach out directly.</p>
-      <p class="body" data-lang-ru>Для консультаций, сотрудничества, лекций или вопросов о
-        психоонтологии — напишите напрямую.</p>
+      <div class="kicker" data-lang-en>{contact.kicker.en}</div><div class="kicker" data-lang-ru>{contact.kicker.ru}</div>
+      <h2 data-lang-en>{contact.heading.en}</h2><h2 data-lang-ru>{contact.heading.ru}</h2>
+      <p class="body" data-lang-en>{contact.body.en}</p>
+      <p class="body" data-lang-ru>{contact.body.ru}</p>
       <div class="contact-methods">
-        <a class="btn btn-primary" href="mailto:hello@naghdyan.com">
-          <span data-lang-en>Email</span><span data-lang-ru>Написать</span> hello@naghdyan.com
-        </a>
-        <a class="btn btn-ghost" href="#" data-lang-en>Telegram</a>
-        <a class="btn btn-ghost" href="#" data-lang-ru>Телеграм</a>
+        {
+          email && (
+            <a class="btn btn-primary" href={`mailto:${email}`}>
+              <span data-lang-en>Email</span><span data-lang-ru>Написать</span> {email}
+            </a>
+          )
+        }
+        {
+          telegram && (
+            <a class="btn btn-ghost" href={telegram} target="_blank" rel="noopener">
+              <span data-lang-en>Telegram</span><span data-lang-ru>Телеграм</span>
+            </a>
+          )
+        }
       </div>
     </div>
   </div>

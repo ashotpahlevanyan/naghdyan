@@ -1,0 +1,21 @@
+---
+import { getSite } from '@lib/content';
+
+/**
+ * Brand lockup: uploaded logo (CMS) or the built-in "N" mark, plus the site
+ * name. `compact` (nav) hides the name below 820px via the `.full` class;
+ * the footer shows it always.
+ */
+interface Props {
+  href?: string;
+  compact?: boolean;
+}
+const { href = '/#top', compact = false } = Astro.props;
+const site = await getSite();
+const { brand, logo } = site;
+const labelClass = compact ? 'full' : '';
+---
+<a class="brand" href={href}>
+  {logo ? <img class="mark-img" src={logo} alt="" /> : <span class="mark">N</span>}
+  <span class={labelClass} data-lang-en>{brand.en}</span><span class={labelClass} data-lang-ru>{brand.ru}</span>
+</a>

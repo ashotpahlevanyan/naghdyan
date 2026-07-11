@@ -1,48 +1,56 @@
+---
+import { getSite, getHome } from '@lib/content';
+import { inline } from '@lib/richtext';
+
+const site = await getSite();
+const { hero } = await getHome();
+const { brand, portrait } = site;
+---
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <span class="eyebrow" data-lang-en>Scientist · Psychologist · Researcher</span>
-      <span class="eyebrow" data-lang-ru>Учёный · Психолог · Исследователь</span>
+      <span class="eyebrow" data-lang-en>{hero.eyebrow.en}</span>
+      <span class="eyebrow" data-lang-ru>{hero.eyebrow.ru}</span>
 
-      <h1 data-lang-en>Ruben Naghdyan</h1>
-      <h1 data-lang-ru>Рубен Нагдян</h1>
+      <h1 data-lang-en>{brand.en}</h1>
+      <h1 data-lang-ru>{brand.ru}</h1>
 
-      <p class="lede" data-lang-en>
-        Scientist and psychologist working at the intersection of <b>NLP</b> and
-        <b>Emotional-Image Therapy&nbsp;(EOT)</b> — and the founder of
-        <span class="accent">psychoontology</span>, an emerging framework for the study of
-        mind, meaning, and being.
-      </p>
-      <p class="lede" data-lang-ru>
-        Учёный и психолог, работающий на стыке <b>НЛП</b> и
-        <b>эмоционально-образной терапии&nbsp;(ЭОТ)</b>, — основатель
-        <span class="accent">психоонтологии</span>, нового направления в изучении
-        психики, смысла и бытия.
-      </p>
+      <p class="lede" data-lang-en set:html={inline(hero.lede.en)}></p>
+      <p class="lede" data-lang-ru set:html={inline(hero.lede.ru)}></p>
 
       <div class="hero-tags">
-        <span class="tag" data-lang-en>Neuro-Linguistic Programming</span><span class="tag" data-lang-ru>Нейролингвистическое программирование</span>
-        <span class="tag" data-lang-en>Emotional-Image Therapy</span><span class="tag" data-lang-ru>Эмоционально-образная терапия</span>
-        <span class="tag" data-lang-en>Psychoontology</span><span class="tag" data-lang-ru>Психоонтология</span>
+        {
+          hero.tags.map((tag) => (
+            <>
+              <span class="tag" data-lang-en>{tag.en}</span>
+              <span class="tag" data-lang-ru>{tag.ru}</span>
+            </>
+          ))
+        }
       </div>
 
       <div class="cta-row">
         <a class="btn btn-primary" href="/#books">
-          <span data-lang-en>Explore the work</span><span data-lang-ru>Смотреть работы</span> →
+          <span data-lang-en>{hero.ctaPrimary.en}</span><span data-lang-ru>{hero.ctaPrimary.ru}</span> →
         </a>
         <a class="btn btn-ghost" href="/#contact">
-          <span data-lang-en>Get in touch</span><span data-lang-ru>Связаться</span>
+          <span data-lang-en>{hero.ctaSecondary.en}</span><span data-lang-ru>{hero.ctaSecondary.ru}</span>
         </a>
       </div>
     </div>
 
     <div class="portrait reveal">
-      {/* Replace the placeholder with: <img src="/assets/ruben.jpg" alt="Ruben Naghdyan" /> */}
-      <div class="ph">
-        <b>RN</b>
-        <span data-lang-en>Add a portrait photo here — drop <code>ruben.jpg</code> in <code>public/assets/</code>.</span>
-        <span data-lang-ru>Здесь будет фотография — добавьте <code>ruben.jpg</code> в <code>public/assets/</code>.</span>
-      </div>
+      {
+        portrait ? (
+          <img src={portrait} alt={brand.en} />
+        ) : (
+          <div class="ph">
+            <b>RN</b>
+            <span data-lang-en>Add a portrait photo in the CMS (Site content → Branding).</span>
+            <span data-lang-ru>Добавьте фотографию в CMS (Site content → Branding).</span>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>
