@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SmartImg from './SmartImg.astro';
+import T from './T.astro';
+
+interface Props {
+  book: CollectionEntry<'books'>;
+}
+const { book } = Astro.props;
+const { title, subtitle, year, cover } = book.data;
+---
+<a class="book-card reveal" href={`/books/${book.id}`}>
+  <div class="book-cover">
+    <SmartImg src={cover} alt={title.en} />
+  </div>
+  <div class="b-body">
+    <span class="b-year">{year}</span>
+    <h3><T en={title.en} ru={title.ru} /></h3>
+    {subtitle && <span class="b-sub"><T en={subtitle.en} ru={subtitle.ru} /></span>}
+    <span class="b-link">
+      <span data-lang-en>View book →</span><span data-lang-ru>Подробнее →</span>
+    </span>
+  </div>
+</a>

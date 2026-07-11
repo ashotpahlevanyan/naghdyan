@@ -1,0 +1,13 @@
+order: 1
+title:
+  en: Introduction to Psychoontology
+  ru: Введение в психоонтологию
+description:
+  en: A public lecture on the founding ideas of psychoontology.
+  ru: Публичная лекция об основных идеях психоонтологии.
+tag:
+  en: "Lecture · 2024"
+  ru: "Лекция · 2024"
+video:
+  type: youtube
+  id: dQw4w9WgXcQ

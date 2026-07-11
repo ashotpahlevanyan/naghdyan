@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import T from './T.astro';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+const { article } = Astro.props;
+const { title, source, date, url } = article.data;
+const external = /^https?:/i.test(url);
+---
+<a
+  class="article-row reveal"
+  href={url}
+  {...external ? { target: '_blank', rel: 'noopener' } : {}}
+>
+  <span class="a-date">{date}</span>
+  <span class="a-main">
+    <h4><T en={title.en} ru={title.ru} /></h4>
+    {source && <span class="a-source"><T en={source.en} ru={source.ru} /></span>}
+  </span>
+  <span class="a-arrow">↗</span>
+</a>

@@ -1,0 +1,21 @@
+---
+/**
+ * <img> that falls back to a lettermark placeholder when the file is missing
+ * or empty — so pages can publish before real photos are in place.
+ */
+interface Props {
+  src?: string;
+  alt?: string;
+  phClass?: string;
+  phText?: string;
+}
+const { src, alt = '', phClass = 'cover-ph', phText = 'RN' } = Astro.props;
+const onerr = `this.style.display='none';this.insertAdjacentHTML('afterend','<div class="${phClass}">${phText}</div>')`;
+---
+{
+  src ? (
+    <img src={src} alt={alt} loading="lazy" onerror={onerr} />
+  ) : (
+    <div class={phClass}>{phText}</div>
+  )
+}

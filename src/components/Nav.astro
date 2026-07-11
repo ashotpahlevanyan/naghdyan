@@ -1,0 +1,35 @@
+---
+import LangToggle from './LangToggle.tsx';
+
+/**
+ * Sticky top navigation. Links are absolute (`/#about`) so they work from the
+ * book detail pages too. The EN/RU switch is the only interactive island.
+ */
+const links = [
+  { href: '/#about', en: 'About', ru: 'Обо мне' },
+  { href: '/#psychoontology', en: 'Psychoontology', ru: 'Психоонтология' },
+  { href: '/#books', en: 'Books', ru: 'Книги' },
+  { href: '/#articles', en: 'Articles', ru: 'Статьи' },
+  { href: '/#lectures', en: 'Lectures', ru: 'Лекции' },
+  { href: '/#contact', en: 'Contact', ru: 'Контакты' },
+];
+---
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/#top">
+      <span class="mark">N</span>
+      <span class="full">Ruben&nbsp;Naghdyan</span>
+    </a>
+    <nav class="nav-links">
+      {
+        links.map((l) => (
+          <>
+            <a href={l.href} data-lang-en>{l.en}</a>
+            <a href={l.href} data-lang-ru>{l.ru}</a>
+          </>
+        ))
+      }
+    </nav>
+    <LangToggle client:load />
+  </div>
+</header>

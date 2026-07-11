@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleRow from './ArticleRow.astro';
+
+const articles = (await getCollection('articles')).sort((a, b) => a.data.order - b.data.order);
+---
+<section class="band soft" id="articles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker" data-lang-en>Articles</div><div class="kicker" data-lang-ru>Статьи</div>
+      <h2 data-lang-en>Selected writing & research</h2><h2 data-lang-ru>Избранные статьи и исследования</h2>
+      <p class="body" data-lang-en>Essays, papers, and columns. Click any entry to read the source.</p>
+      <p class="body" data-lang-ru>Эссе, статьи и колонки. Нажмите на запись, чтобы перейти к источнику.</p>
+    </div>
+    <div class="article-list">
+      {articles.map((article) => <ArticleRow article={article} />)}
+    </div>
+  </div>
+</section>
