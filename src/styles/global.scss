@@ -49,6 +49,7 @@ header.nav{
   background:linear-gradient(160deg,#20304a,#141d2c);
   border:1px solid var(--line);color:var(--gold);font-family:var(--serif);font-size:20px
 }
+.brand .mark-img{width:34px;height:34px;border-radius:9px;flex:none;object-fit:cover;border:1px solid var(--line)}
 .nav-links{display:flex;align-items:center;gap:26px}
 .nav-links a{color:var(--ink-soft);font-size:14.5px;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}

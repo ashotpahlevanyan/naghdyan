@@ -1,41 +1,28 @@
+---
+import { getHome } from '@lib/content';
+
+const { focus } = await getHome();
+---
 <section class="band" id="focus">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker" data-lang-en>Areas of focus</div><div class="kicker" data-lang-ru>Направления</div>
-      <h2 data-lang-en>Three disciplines, one line of inquiry</h2>
-      <h2 data-lang-ru>Три дисциплины — один вектор исследования</h2>
+      <div class="kicker" data-lang-en>{focus.kicker.en}</div><div class="kicker" data-lang-ru>{focus.kicker.ru}</div>
+      <h2 data-lang-en>{focus.heading.en}</h2>
+      <h2 data-lang-ru>{focus.heading.ru}</h2>
     </div>
 
     <div class="cards">
-      <article class="card reveal">
-        <div class="ico">Ψ</div>
-        <div class="sub" data-lang-en>Practice</div><div class="sub" data-lang-ru>Практика</div>
-        <h3 data-lang-en>Neuro-Linguistic Programming</h3><h3 data-lang-ru>НЛП</h3>
-        <p data-lang-en>Working with the structure of subjective experience — language, strategy, and
-          state — to help people change how they perceive, decide, and act.</p>
-        <p data-lang-ru>Работа со структурой субъективного опыта — языком, стратегиями и
-          состояниями, — чтобы менять то, как человек воспринимает, решает и действует.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="ico">◈</div>
-        <div class="sub" data-lang-en>Therapy</div><div class="sub" data-lang-ru>Терапия</div>
-        <h3 data-lang-en>Emotional-Image Therapy</h3><h3 data-lang-ru>ЭОТ</h3>
-        <p data-lang-en>Reaching emotion through image: transforming the inner pictures that hold
-          feeling, so that unresolved states can finally resolve.</p>
-        <p data-lang-ru>Доступ к эмоции через образ: преобразование внутренних образов,
-          удерживающих чувство, — чтобы неразрешённые состояния наконец находили разрешение.</p>
-      </article>
-
-      <article class="card reveal">
-        <div class="ico">∞</div>
-        <div class="sub" data-lang-en>New framework</div><div class="sub" data-lang-ru>Новое направление</div>
-        <h3 data-lang-en>Psychoontology</h3><h3 data-lang-ru>Психоонтология</h3>
-        <p data-lang-en>An original synthesis in active development — studying the psyche as a form
-          of being, where meaning and existence meet.</p>
-        <p data-lang-ru>Оригинальный синтез в активной разработке — изучение психики как формы
-          бытия, где встречаются смысл и существование.</p>
-      </article>
+      {
+        focus.cards.map((card) => (
+          <article class="card reveal">
+            <div class="ico">{card.icon}</div>
+            <div class="sub" data-lang-en>{card.sub.en}</div><div class="sub" data-lang-ru>{card.sub.ru}</div>
+            <h3 data-lang-en>{card.title.en}</h3><h3 data-lang-ru>{card.title.ru}</h3>
+            <p data-lang-en>{card.body.en}</p>
+            <p data-lang-ru>{card.body.ru}</p>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>

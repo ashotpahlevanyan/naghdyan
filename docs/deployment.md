@@ -80,6 +80,16 @@ Reach it at **`https://naghdyan.com/admin`**. Login needs the OAuth App and env
 vars from §2. Editors get a form UI; saving commits YAML to `src/content/…` on
 `main`, which triggers a Vercel rebuild — the edit is live in ~1 min.
 
+Collections:
+
+- **Site content** → *Branding & contact* (logo, favicon, portrait, brand name,
+  contact email/Telegram, footer, SEO) and *Homepage text* (hero, about, focus
+  cards, psychoontology, contact copy). Prose fields accept `**bold**` /
+  `*italic*`.
+- **Books / Articles / Lectures** — the listed content.
+
+Images (logo, favicon, portrait, book covers) upload to `public/assets/uploads`.
+
 New entries are named from the **URL slug** field; existing entries already carry
 a `slug:` matching their filename. There is no "Sveltia account" — it is static
 JS served from this repo that commits back to this repo. Fully self-contained.

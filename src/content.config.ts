@@ -49,4 +49,71 @@ const lectures = defineCollection({
   }),
 });
 
-export const collections = { books, articles, lectures };
+/** Global branding, contact, and SEO — a single settings/site.yaml. */
+const site = defineCollection({
+  loader: glob({ pattern: 'site.yaml', base: './src/content/settings' }),
+  schema: z.object({
+    brand: bilingual,
+    logo: z.string().default(''),
+    favicon: z.string().default(''),
+    portrait: z.string().default(''),
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+    }),
+    contact: z.object({
+      email: z.string().default(''),
+      telegram: z.string().default(''),
+    }),
+    footer: z.object({
+      rights: bilingual,
+    }),
+  }),
+});
+
+/** Homepage section copy — a single settings/home.yaml. */
+const home = defineCollection({
+  loader: glob({ pattern: 'home.yaml', base: './src/content/settings' }),
+  schema: z.object({
+    hero: z.object({
+      eyebrow: bilingual,
+      lede: bilingual,
+      tags: z.array(bilingual).default([]),
+      ctaPrimary: bilingual,
+      ctaSecondary: bilingual,
+    }),
+    about: z.object({
+      kicker: bilingual,
+      heading: bilingual,
+      body: z.array(bilingual).default([]),
+    }),
+    focus: z.object({
+      kicker: bilingual,
+      heading: bilingual,
+      cards: z
+        .array(
+          z.object({
+            icon: z.string(),
+            sub: bilingual,
+            title: bilingual,
+            body: bilingual,
+          }),
+        )
+        .default([]),
+    }),
+    psychoontology: z.object({
+      kicker: bilingual,
+      heading: bilingual,
+      intro: bilingual,
+      quote: bilingual,
+      points: z.array(bilingual).default([]),
+    }),
+    contact: z.object({
+      kicker: bilingual,
+      heading: bilingual,
+      body: bilingual,
+    }),
+  }),
+});
+
+export const collections = { books, articles, lectures, site, home };
