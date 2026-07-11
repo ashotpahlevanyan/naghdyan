@@ -1,0 +1,13 @@
+order: 2
+title:
+  en: Emotional-Image Therapy in practice
+  ru: Эмоционально-образная терапия на практике
+description:
+  en: A workshop demonstration of core EOT techniques.
+  ru: Демонстрация ключевых техник ЭОТ на семинаре.
+tag:
+  en: "Workshop · 2023"
+  ru: "Семинар · 2023"
+video:
+  type: vimeo
+  id: "76979871"

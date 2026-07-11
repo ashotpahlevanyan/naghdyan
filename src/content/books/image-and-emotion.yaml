@@ -1,0 +1,22 @@
+order: 2
+title:
+  en: Image and Emotion
+  ru: Образ и эмоция
+subtitle:
+  en: Working with the inner picture
+  ru: Работа с внутренним образом
+year: "2021"
+cover: /assets/books/image-and-emotion/cover.jpg
+images:
+  - /assets/books/image-and-emotion/cover.jpg
+facts:
+  - en: "Paperback · 248 pp."
+    ru: "Мягкая обложка · 248 стр."
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+buyLink: ""
+description:
+  - en: "Placeholder description. A practical exploration of Emotional-Image Therapy — how transforming inner images allows unresolved emotional states to finally move and resolve."
+    ru: "Описание-заглушка. Практическое исследование эмоционально-образной терапии: как преобразование внутренних образов позволяет неразрешённым эмоциональным состояниям прийти в движение и разрешиться."
+  - en: "Replace this text with the real synopsis, table of contents highlights, or reviews."
+    ru: "Замените этот текст реальной аннотацией, содержанием или отзывами."

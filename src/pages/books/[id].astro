@@ -1,0 +1,74 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '@layouts/Base.astro';
+import BookSlider from '@components/BookSlider.tsx';
+import T from '@components/T.astro';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((book) => ({
+    params: { id: book.id },
+    props: { book },
+  }));
+}
+
+interface Props {
+  book: CollectionEntry<'books'>;
+}
+const { book } = Astro.props;
+const { title, subtitle, year, cover, images, facts, buyLink, description } = book.data;
+
+const slides = images.length ? images : cover ? [cover] : [];
+---
+<Base
+  title={`${title.en} — Ruben Naghdyan`}
+  ogTitle={`${title.en} — Ruben Naghdyan`}
+  description={`${title.en} — a book by Ruben Naghdyan, founder of psychoontology.`}
+>
+  <section class="subpage">
+    <div class="wrap">
+      <a class="back-link" href="/#books">
+        ← <span data-lang-en>All books</span><span data-lang-ru>Все книги</span>
+      </a>
+
+      <div class="book-detail">
+        <BookSlider client:load images={slides} alt={title.en} />
+
+        <div class="book-meta">
+          <div class="kicker">
+            <span data-lang-en>Book · {year}</span><span data-lang-ru>Книга · {year}</span>
+          </div>
+          <h1><T en={title.en} ru={title.ru} /></h1>
+          {subtitle && <div class="b-sub"><T en={subtitle.en} ru={subtitle.ru} /></div>}
+
+          {
+            facts.length > 0 && (
+              <div class="meta-facts">
+                {facts.map((f) => (
+                  <span><T en={f.en} ru={f.ru} /></span>
+                ))}
+              </div>
+            )
+          }
+
+          <div class="book-desc">
+            <h2><span data-lang-en>About the book</span><span data-lang-ru>О книге</span></h2>
+            {description.map((p) => (
+              <p><T en={p.en} ru={p.ru} /></p>
+            ))}
+          </div>
+
+          {
+            buyLink && (
+              <div class="book-actions">
+                <a class="btn btn-primary" href={buyLink} target="_blank" rel="noopener">
+                  <span data-lang-en>Get the book</span><span data-lang-ru>Купить книгу</span>
+                </a>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

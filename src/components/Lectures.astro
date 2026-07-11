@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import VideoCard from './VideoCard.tsx';
+import { videoThumb, videoEmbedSrc } from '@lib/video';
+
+const lectures = (await getCollection('lectures')).sort((a, b) => a.data.order - b.data.order);
+---
+<section class="band" id="lectures">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker" data-lang-en>Lectures & talks</div><div class="kicker" data-lang-ru>Лекции и выступления</div>
+      <h2 data-lang-en>Watch &amp; listen</h2><h2 data-lang-ru>Смотреть и слушать</h2>
+      <p class="body" data-lang-en>Lectures, workshops, and conversations — YouTube and Vimeo. Click to play.</p>
+      <p class="body" data-lang-ru>Лекции, семинары и беседы — YouTube и Vimeo. Нажмите, чтобы воспроизвести.</p>
+    </div>
+    <div class="lecture-grid">
+      {
+        lectures.map((l) => (
+          <VideoCard
+            client:visible
+            embedSrc={videoEmbedSrc(l.data.video)}
+            thumb={videoThumb(l.data.video)}
+            tagEn={l.data.tag?.en}
+            tagRu={l.data.tag?.ru}
+            titleEn={l.data.title.en}
+            titleRu={l.data.title.ru}
+            descEn={l.data.description?.en}
+            descRu={l.data.description?.ru}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

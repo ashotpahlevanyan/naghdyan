@@ -1,0 +1,28 @@
+order: 1
+title:
+  en: Foundations of Psychoontology
+  ru: Основания психоонтологии
+subtitle:
+  en: The psyche as a mode of being
+  ru: Психика как способ бытия
+year: "2024"
+cover: /assets/books/psychoontology-foundations/cover.jpg
+images:
+  - /assets/books/psychoontology-foundations/cover.jpg
+  - /assets/books/psychoontology-foundations/spread-1.jpg
+  - /assets/books/psychoontology-foundations/spread-2.jpg
+facts:
+  - en: "Hardcover · 320 pp."
+    ru: "Твёрдый переплёт · 320 стр."
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+  - en: "First edition, 2024"
+    ru: "Первое издание, 2024"
+buyLink: ""
+description:
+  - en: "This is a placeholder description — replace it with the real book text. Foundations of Psychoontology introduces the central question of Ruben Naghdyan's research: what does it mean for a mind not merely to function, but to be?"
+    ru: "Это текст-заглушка — замените его реальным описанием книги. «Основания психоонтологии» вводят центральный вопрос исследований Рубена Нагдяна: что значит для психики не просто функционировать, но — быть?"
+  - en: "Drawing on years of practice in Neuro-Linguistic Programming and Emotional-Image Therapy, the book builds a bridge between clinical work and the philosophy of being, offering a new vocabulary for the experience of existence."
+    ru: "Опираясь на многолетнюю практику в НЛП и эмоционально-образной терапии, книга строит мост между клинической работой и философией бытия, предлагая новый язык для переживания существования."
+  - en: "Written for practitioners, researchers, and thoughtful readers alike, it moves from concrete case material toward a coherent framework — psychoontology."
+    ru: "Написанная и для практиков, и для исследователей, и для вдумчивого читателя, она движется от конкретного материала случаев к целостной модели — психоонтологии."

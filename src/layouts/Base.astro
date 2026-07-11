@@ -1,0 +1,80 @@
+---
+import '@styles/global.scss';
+import Nav from '@components/Nav.astro';
+import Footer from '@components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogTitle?: string;
+}
+const {
+  title,
+  description = 'Ruben Naghdyan — scientist and psychologist working in NLP and Emotional-Image Therapy (EOT), and developing psychoontology, a new framework for the study of mind, meaning, and being.',
+  ogTitle = 'Ruben Naghdyan — Founder of Psychoontology',
+} = Astro.props;
+
+const favicon =
+  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230e1420%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 font-family=%22Georgia,serif%22 text-anchor=%22middle%22 fill=%22%23c9a86a%22>N</text></svg>';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Ruben Naghdyan" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://naghdyan.com" />
+    <meta name="theme-color" content="#0e1420" />
+
+    <link rel="icon" href={favicon} />
+
+    {/* Apply the saved language before first paint to avoid a flash of EN. */}
+    <script is:inline>
+      (function () {
+        try {
+          var l = localStorage.getItem('naghdyan-lang') || 'en';
+          document.documentElement.setAttribute('data-lang', l);
+          document.documentElement.setAttribute('lang', l);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <Nav />
+    <slot />
+    <Footer />
+
+    {/* Reveal-on-scroll: sections fade/slide in as they enter the viewport. */}
+    <script is:inline>
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) {
+          els.forEach(function (el) {
+            el.classList.add('in');
+          });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add('in');
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        els.forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

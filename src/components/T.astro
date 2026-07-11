@@ -1,0 +1,16 @@
+---
+/**
+ * Bilingual text. Renders BOTH languages; the active one is shown by the CSS
+ * language switch (`html[data-lang="ru"]` rules in global.scss). `tag` lets a
+ * caller change the wrapper element when spans would be invalid (e.g. inside a
+ * list where a block is expected).
+ */
+interface Props {
+  en: string;
+  ru: string;
+  tag?: keyof HTMLElementTagNameMap;
+}
+const { en, ru, tag = 'span' } = Astro.props;
+const Tag = tag as any;
+---
+<Tag data-lang-en>{en}</Tag><Tag data-lang-ru>{ru}</Tag>
