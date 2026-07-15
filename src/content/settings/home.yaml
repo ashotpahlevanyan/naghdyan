@@ -2,105 +2,138 @@ hero:
   eyebrow:
     en: Scientist · Psychologist · Researcher
     ru: Учёный · Психолог · Исследователь
+    hy: Գիտնական · Հոգեբան · Հետազոտող
   lede:
     en: "Scientist and psychologist working at the intersection of **NLP** and **Emotional-Image Therapy (EOT)** — and the founder of psychoontology, an emerging framework for the study of mind, meaning, and being."
     ru: "Учёный и психолог, работающий на стыке **НЛП** и **эмоционально-образной терапии (ЭОТ)**, — основатель психоонтологии, нового направления в изучении психики, смысла и бытия."
+    hy: "Գիտնական և հոգեբան, որն աշխատում է **ՆԼԾ**-ի և **էմոցիոնալ-պատկերային թերապիայի (ԷՊԹ)** խաչմերուկում, — հոգեոնտոլոգիայի հիմնադիրը՝ հոգեկանի, իմաստի և կեցության ուսումնասիրության նոր ուղղություն։"
   tags:
     - en: Neuro-Linguistic Programming
       ru: Нейролингвистическое программирование
+      hy: Նեյրոլեզվաբանական ծրագրավորում
     - en: Emotional-Image Therapy
       ru: Эмоционально-образная терапия
+      hy: Էմոցիոնալ-պատկերային թերապիա
     - en: Psychoontology
       ru: Психоонтология
+      hy: Հոգեոնտոլոգիա
   ctaPrimary:
     en: Explore the work
     ru: Смотреть работы
+    hy: Ծանոթանալ աշխատանքին
   ctaSecondary:
     en: Get in touch
     ru: Связаться
+    hy: Կապվել
 
 about:
   kicker:
     en: About
     ru: Обо мне
+    hy: Իմ մասին
   heading:
     en: Bridging living practice and rigorous theory
     ru: Между живой практикой и строгой теорией
+    hy: Կենդանի պրակտիկայի և խիստ տեսության միջև
   body:
     - en: "Ruben Naghdyan is a psychologist and researcher whose work unites the practical precision of Neuro-Linguistic Programming with the depth of Emotional-Image Therapy. For years his practice has helped people transform limiting patterns into resourceful states — while his research pursues a larger question: **how meaning, emotion, and the sense of being are structured within the psyche.**"
       ru: "Рубен Нагдян — психолог и исследователь, чья работа соединяет практическую точность нейролингвистического программирования с глубиной эмоционально-образной терапии. Многолетняя практика помогает людям превращать ограничивающие паттерны в ресурсные состояния, а исследования отвечают на более крупный вопрос: **как устроены смысл, эмоция и переживание бытия внутри психики.**"
+      hy: "Ռուբեն Նաղդյանը հոգեբան և հետազոտող է, ում աշխատանքը միավորում է նեյրոլեզվաբանական ծրագրավորման գործնական ճշգրտությունը էմոցիոնալ-պատկերային թերապիայի խորության հետ։ Երկար տարիներ նրա պրակտիկան օգնում է մարդկանց սահմանափակող կաղապարները վերածել ռեսուրսային վիճակների, իսկ նրա հետազոտությունները փնտրում են ավելի մեծ հարցի պատասխանը՝ **ինչպես են իմաստը, էմոցիան և կեցության ապրումը կառուցվում հոգեկանի ներսում։**"
     - en: "Out of that inquiry grew **psychoontology** — his active line of development that treats the mind not only as something to be adjusted, but as a mode of *being* to be understood. This site gathers his books, articles, and lectures."
       ru: "Из этого поиска выросла **психоонтология** — активно развиваемое направление, рассматривающее психику не только как то, что можно скорректировать, но и как способ *бытия*, который необходимо понять. Здесь собраны его книги, статьи и лекции."
+      hy: "Այդ որոնումից ծնվեց **հոգեոնտոլոգիան**՝ նրա ակտիվորեն զարգացող ուղղությունը, որը հոգեկանը դիտարկում է ոչ միայն որպես ուղղելու ենթակա բան, այլև որպես *կեցության* եղանակ, որը պետք է հասկանալ։ Այս կայքում հավաքված են նրա գրքերը, հոդվածները և դասախոսությունները։"
 
 focus:
   kicker:
     en: Areas of focus
     ru: Направления
+    hy: Ուղղություններ
   heading:
     en: Three disciplines, one line of inquiry
     ru: Три дисциплины — один вектор исследования
+    hy: Երեք դիսցիպլին՝ մեկ հետազոտական ուղղություն
   cards:
     - icon: Ψ
       sub:
         en: Practice
         ru: Практика
+        hy: Պրակտիկա
       title:
         en: Neuro-Linguistic Programming
         ru: НЛП
+        hy: ՆԼԾ
       body:
         en: "Working with the structure of subjective experience — language, strategy, and state — to help people change how they perceive, decide, and act."
         ru: "Работа со структурой субъективного опыта — языком, стратегиями и состояниями, — чтобы менять то, как человек воспринимает, решает и действует."
+        hy: "Աշխատանք սուբյեկտիվ փորձի կառուցվածքի հետ՝ լեզվի, ռազմավարության և վիճակի, որպեսզի փոխվի այն, թե ինչպես է մարդն ընկալում, որոշում կայացնում և գործում։"
     - icon: ◈
       sub:
         en: Therapy
         ru: Терапия
+        hy: Թերապիա
       title:
         en: Emotional-Image Therapy
         ru: ЭОТ
+        hy: ԷՊԹ
       body:
         en: "Reaching emotion through image: transforming the inner pictures that hold feeling, so that unresolved states can finally resolve."
         ru: "Доступ к эмоции через образ: преобразование внутренних образов, удерживающих чувство, — чтобы неразрешённые состояния наконец находили разрешение."
+        hy: "Էմոցիային հասնել պատկերի միջոցով՝ վերափոխելով զգացումը պահող ներքին պատկերները, որպեսզի չլուծված վիճակները վերջապես գտնեն իրենց լուծումը։"
     - icon: ∞
       sub:
         en: New framework
         ru: Новое направление
+        hy: Նոր ուղղություն
       title:
         en: Psychoontology
         ru: Психоонтология
+        hy: Հոգեոնտոլոգիա
       body:
         en: "An original synthesis in active development — studying the psyche as a form of being, where meaning and existence meet."
         ru: "Оригинальный синтез в активной разработке — изучение психики как формы бытия, где встречаются смысл и существование."
+        hy: "Ինքնատիպ սինթեզ ակտիվ մշակման փուլում՝ հոգեկանի ուսումնասիրություն որպես կեցության ձև, որտեղ հանդիպում են իմաստն ու գոյությունը։"
 
 psychoontology:
   kicker:
     en: The core work
     ru: Ключевая работа
+    hy: Առանցքային աշխատանք
   heading:
     en: Psychoontology
     ru: Психоонтология
+    hy: Հոգեոնտոլոգիա
   intro:
     en: "A developing framework that asks not only *how the mind works*, but *what it means for a mind to be*."
     ru: "Развивающееся направление, задающее вопрос не только о том, *как работает психика*, но и о том, *что значит для психики — быть*."
+    hy: "Զարգացող ուղղություն, որը հարց է տալիս ոչ միայն այն մասին, *ինչպես է աշխատում հոգեկանը*, այլև այն, թե *ինչ է նշանակում հոգեկանի համար՝ լինել*։"
   quote:
     en: "“The psyche is not only something we have. It is a way of being — and it can be studied as such.”"
     ru: "«Психика — это не только то, чем мы обладаем. Это способ бытия, и его можно изучать именно так»."
+    hy: "«Հոգեկանը միայն այն չէ, ինչ մենք ունենք։ Այն կեցության եղանակ է, և հենց այդպես էլ կարելի է ուսումնասիրել այն»։"
   points:
     - en: "**Foundations.** A conceptual bridge between psychology and ontology — the study of being — grounded in real therapeutic practice."
       ru: "**Основания.** Концептуальный мост между психологией и онтологией — учением о бытии, — укоренённый в реальной терапевтической практике."
+      hy: "**Հիմունքներ։** Հայեցակարգային կամուրջ հոգեբանության և գոյաբանության՝ կեցության ուսմունքի միջև, արմատավորված իրական թերապևտիկ պրակտիկայում։"
     - en: "**Method.** Integrating NLP's structural clarity with EOT's emotional depth to reach the layer where meaning is formed."
       ru: "**Метод.** Соединение структурной ясности НЛП с эмоциональной глубиной ЭОТ, чтобы достичь слоя, где рождается смысл."
+      hy: "**Մեթոդ։** ՆԼԾ-ի կառուցվածքային հստակության և ԷՊԹ-ի էմոցիոնալ խորության միավորում՝ հասնելու այն շերտին, որտեղ ձևավորվում է իմաստը։"
     - en: "**Aim.** To give practitioners and researchers a shared language for the experience of existence, not just its symptoms."
       ru: "**Цель.** Дать практикам и исследователям общий язык для переживания существования, а не только его симптомов."
+      hy: "**Նպատակ։** Պրակտիկներին և հետազոտողներին տալ ընդհանուր լեզու գոյության ապրման համար, և ոչ միայն նրա ախտանիշների։"
     - en: "**Status.** Actively developing — new ideas, papers, and frameworks are published here as the work unfolds."
       ru: "**Статус.** Активная разработка — новые идеи, статьи и модели публикуются здесь по мере развития работы."
+      hy: "**Կարգավիճակ։** Ակտիվ մշակում. նոր գաղափարներ, հոդվածներ և մոդելներ հրապարակվում են այստեղ՝ աշխատանքի ընթացքին զուգահեռ։"
 
 contact:
   kicker:
     en: Contact
     ru: Контакты
+    hy: Կապ
   heading:
     en: Let's work or think together
     ru: Давайте работать или мыслить вместе
+    hy: Աշխատենք կամ մտածենք միասին
   body:
     en: "For consultations, collaboration, lectures, or questions about psychoontology — reach out directly."
     ru: "Для консультаций, сотрудничества, лекций или вопросов о психоонтологии — напишите напрямую."
+    hy: "Խորհրդատվության, համագործակցության, դասախոսությունների կամ հոգեոնտոլոգիայի վերաբերյալ հարցերի համար՝ գրե՛ք ուղղակիորեն։"

@@ -7,10 +7,11 @@ const p = (await getHome()).psychoontology;
 <section class="band soft" id="psychoontology">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker" data-lang-en>{p.kicker.en}</div><div class="kicker" data-lang-ru>{p.kicker.ru}</div>
-      <h2 data-lang-en>{p.heading.en}</h2><h2 data-lang-ru>{p.heading.ru}</h2>
+      <div class="kicker" data-lang-en>{p.kicker.en}</div><div class="kicker" data-lang-ru>{p.kicker.ru}</div><div class="kicker" data-lang-hy>{p.kicker.hy}</div>
+      <h2 data-lang-en>{p.heading.en}</h2><h2 data-lang-ru>{p.heading.ru}</h2><h2 data-lang-hy>{p.heading.hy}</h2>
       <p class="body" data-lang-en set:html={inline(p.intro.en)}></p>
       <p class="body" data-lang-ru set:html={inline(p.intro.ru)}></p>
+      <p class="body" data-lang-hy set:html={inline(p.intro.hy)}></p>
     </div>
 
     <div class="feature">
@@ -18,12 +19,14 @@ const p = (await getHome()).psychoontology;
         <div class="glyph">∞</div>
         <p class="quote" data-lang-en>{p.quote.en}</p>
         <p class="quote" data-lang-ru>{p.quote.ru}</p>
+        <p class="quote" data-lang-hy>{p.quote.hy}</p>
       </div>
 
       <div class="reveal">
         <ul class="pill-list">
           {p.points.map((point) => <li data-lang-en><span set:html={inline(point.en)} /></li>)}
           {p.points.map((point) => <li data-lang-ru><span set:html={inline(point.ru)} /></li>)}
+          {p.points.map((point) => <li data-lang-hy><span set:html={inline(point.hy)} /></li>)}
         </ul>
       </div>
     </div>

@@ -7,12 +7,12 @@ import LangToggle from './LangToggle.tsx';
  * book detail pages too. The EN/RU switch is the only interactive island.
  */
 const links = [
-  { href: '/#about', en: 'About', ru: 'Обо мне' },
-  { href: '/#psychoontology', en: 'Psychoontology', ru: 'Психоонтология' },
-  { href: '/#books', en: 'Books', ru: 'Книги' },
-  { href: '/#articles', en: 'Articles', ru: 'Статьи' },
-  { href: '/#lectures', en: 'Lectures', ru: 'Лекции' },
-  { href: '/#contact', en: 'Contact', ru: 'Контакты' },
+  { href: '/#about', en: 'About', ru: 'Обо мне', hy: 'Իմ մասին' },
+  { href: '/#psychoontology', en: 'Psychoontology', ru: 'Психоонтология', hy: 'Հոգեոնտոլոգիա' },
+  { href: '/#books', en: 'Books', ru: 'Книги', hy: 'Գրքեր' },
+  { href: '/#articles', en: 'Articles', ru: 'Статьи', hy: 'Հոդվածներ' },
+  { href: '/#lectures', en: 'Lectures', ru: 'Лекции', hy: 'Դասախոսություններ' },
+  { href: '/#contact', en: 'Contact', ru: 'Контакты', hy: 'Կապ' },
 ];
 ---
 <header class="nav">
@@ -24,6 +24,7 @@ const links = [
           <>
             <a href={l.href} data-lang-en>{l.en}</a>
             <a href={l.href} data-lang-ru>{l.ru}</a>
+            <a href={l.href} data-lang-hy>{l.hy}</a>
           </>
         ))
       }

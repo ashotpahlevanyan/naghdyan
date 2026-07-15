@@ -1,6 +1,6 @@
 # Sveltia CMS configuration — content manager for naghdyan.com
 # Served at /admin. Fields mirror src/content.config.ts; every visible string is
-# bilingual { en, ru }. Auth uses the GitHub OAuth handler in api/ (docs/deployment.md).
+# trilingual { en, ru, hy }. Auth uses the GitHub OAuth handler in api/ (docs/deployment.md).
 
 backend:
   name: github
@@ -35,6 +35,7 @@ collections:
             fields:
               - { name: en, label: English, widget: string }
               - { name: ru, label: Русский, widget: string }
+              - { name: hy, label: Հայերեն, widget: string }
           - { name: logo, label: Logo image, widget: image, required: false, hint: "Optional. Falls back to the built-in ‘N’ mark." }
           - { name: favicon, label: Favicon, widget: image, required: false, hint: "Optional browser-tab icon." }
           - { name: portrait, label: Portrait photo, widget: image, required: false, hint: "Shown in the hero. Optional." }
@@ -60,7 +61,7 @@ collections:
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
-
+                  - { name: hy, label: Հայերեն, widget: string }
       - name: home
         label: Homepage text
         file: src/content/settings/home.yaml
@@ -75,6 +76,7 @@ collections:
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: lede
                 label: Lede
                 widget: object
@@ -82,24 +84,28 @@ collections:
                 fields:
                   - { name: en, label: English, widget: text }
                   - { name: ru, label: Русский, widget: text }
+                  - { name: hy, label: Հայերեն, widget: text }
               - name: tags
                 label: Tags
                 widget: list
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: ctaPrimary
                 label: Primary button
                 widget: object
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: ctaSecondary
                 label: Secondary button
                 widget: object
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
           - name: about
             label: About
             widget: object
@@ -110,12 +116,14 @@ collections:
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: heading
                 label: Heading
                 widget: object
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: body
                 label: Paragraphs
                 widget: list
@@ -123,6 +131,7 @@ collections:
                 fields:
                   - { name: en, label: English, widget: text }
                   - { name: ru, label: Русский, widget: text }
+                  - { name: hy, label: Հայերեն, widget: text }
           - name: focus
             label: Areas of focus
             widget: object
@@ -133,12 +142,14 @@ collections:
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: heading
                 label: Heading
                 widget: object
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: cards
                 label: Cards
                 widget: list
@@ -150,18 +161,21 @@ collections:
                     fields:
                       - { name: en, label: English, widget: string }
                       - { name: ru, label: Русский, widget: string }
+                      - { name: hy, label: Հայերեն, widget: string }
                   - name: title
                     label: Title
                     widget: object
                     fields:
                       - { name: en, label: English, widget: string }
                       - { name: ru, label: Русский, widget: string }
+                      - { name: hy, label: Հայերեն, widget: string }
                   - name: body
                     label: Body
                     widget: object
                     fields:
                       - { name: en, label: English, widget: text }
                       - { name: ru, label: Русский, widget: text }
+                      - { name: hy, label: Հայերեն, widget: text }
           - name: psychoontology
             label: Psychoontology
             widget: object
@@ -172,24 +186,28 @@ collections:
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: heading
                 label: Heading
                 widget: object
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: intro
                 label: Intro
                 widget: object
                 fields:
                   - { name: en, label: English, widget: text }
                   - { name: ru, label: Русский, widget: text }
+                  - { name: hy, label: Հայերեն, widget: text }
               - name: quote
                 label: Pull quote
                 widget: object
                 fields:
                   - { name: en, label: English, widget: text }
                   - { name: ru, label: Русский, widget: text }
+                  - { name: hy, label: Հայերեն, widget: text }
               - name: points
                 label: Points
                 widget: list
@@ -197,6 +215,7 @@ collections:
                 fields:
                   - { name: en, label: English, widget: text }
                   - { name: ru, label: Русский, widget: text }
+                  - { name: hy, label: Հայերեն, widget: text }
           - name: contact
             label: Contact section
             widget: object
@@ -207,19 +226,21 @@ collections:
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: heading
                 label: Heading
                 widget: object
                 fields:
                   - { name: en, label: English, widget: string }
                   - { name: ru, label: Русский, widget: string }
+                  - { name: hy, label: Հայերեն, widget: string }
               - name: body
                 label: Body
                 widget: object
                 fields:
                   - { name: en, label: English, widget: text }
                   - { name: ru, label: Русский, widget: text }
-
+                  - { name: hy, label: Հայերեն, widget: text }
   # -------------------------------------------------------------- BOOKS
   - name: books
     label: Books
@@ -247,6 +268,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string }
           - { name: ru, label: Русский, widget: string }
+          - { name: hy, label: Հայերեն, widget: string }
       - name: subtitle
         label: Subtitle
         widget: object
@@ -254,6 +276,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string, required: false }
           - { name: ru, label: Русский, widget: string, required: false }
+          - { name: hy, label: Հայերեն, widget: string, required: false }
       - { name: year, label: Year, widget: string }
       - { name: cover, label: Cover image, widget: image, required: false }
       - name: images
@@ -268,6 +291,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string }
           - { name: ru, label: Русский, widget: string }
+          - { name: hy, label: Հայերեն, widget: string }
       - { name: buyLink, label: Buy link (URL), widget: string, required: false }
       - name: description
         label: Description (one entry per paragraph)
@@ -275,7 +299,7 @@ collections:
         fields:
           - { name: en, label: English, widget: text }
           - { name: ru, label: Русский, widget: text }
-
+          - { name: hy, label: Հայերեն, widget: text }
   # ----------------------------------------------------------- ARTICLES
   - name: articles
     label: Articles
@@ -302,6 +326,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string }
           - { name: ru, label: Русский, widget: string }
+          - { name: hy, label: Հայերեն, widget: string }
       - name: source
         label: Source
         widget: object
@@ -309,6 +334,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string, required: false }
           - { name: ru, label: Русский, widget: string, required: false }
+          - { name: hy, label: Հայերեն, widget: string, required: false }
       - { name: date, label: Date / year, widget: string }
       - { name: url, label: Link URL, widget: string, default: '#' }
 
@@ -338,6 +364,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string }
           - { name: ru, label: Русский, widget: string }
+          - { name: hy, label: Հայերեն, widget: string }
       - name: description
         label: Description
         widget: object
@@ -345,6 +372,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string, required: false }
           - { name: ru, label: Русский, widget: string, required: false }
+          - { name: hy, label: Հայերեն, widget: string, required: false }
       - name: tag
         label: Tag (e.g. "Lecture · 2024")
         widget: object
@@ -352,6 +380,7 @@ collections:
         fields:
           - { name: en, label: English, widget: string, required: false }
           - { name: ru, label: Русский, widget: string, required: false }
+          - { name: hy, label: Հայերեն, widget: string, required: false }
       - name: video
         label: Video
         widget: object

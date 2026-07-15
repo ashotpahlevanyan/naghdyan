@@ -15,10 +15,10 @@ const { title, subtitle, year, cover } = book.data;
   </div>
   <div class="b-body">
     <span class="b-year">{year}</span>
-    <h3><T en={title.en} ru={title.ru} /></h3>
-    {subtitle && <span class="b-sub"><T en={subtitle.en} ru={subtitle.ru} /></span>}
+    <h3><T en={title.en} ru={title.ru} hy={title.hy} /></h3>
+    {subtitle && <span class="b-sub"><T en={subtitle.en} ru={subtitle.ru} hy={subtitle.hy} /></span>}
     <span class="b-link">
-      <span data-lang-en>View book →</span><span data-lang-ru>Подробнее →</span>
+      <span data-lang-en>View book →</span><span data-lang-ru>Подробнее →</span><span data-lang-hy>Մանրամասն →</span>
     </span>
   </div>
 </a>

@@ -5,10 +5,13 @@ interface Props {
   thumb: string;
   tagEn?: string;
   tagRu?: string;
+  tagHy?: string;
   titleEn: string;
   titleRu: string;
+  titleHy: string;
   descEn?: string;
   descRu?: string;
+  descHy?: string;
 }
 
 /**
@@ -21,10 +24,13 @@ export default function VideoCard({
   thumb,
   tagEn,
   tagRu,
+  tagHy,
   titleEn,
   titleRu,
+  titleHy,
   descEn,
   descRu,
+  descHy,
 }: Props) {
   const [playing, setPlaying] = useState(false);
 
@@ -68,20 +74,23 @@ export default function VideoCard({
         )}
       </div>
       <div className="v-body">
-        {(tagEn || tagRu) && (
+        {(tagEn || tagRu || tagHy) && (
           <div className="v-tag">
             <span data-lang-en>{tagEn}</span>
             <span data-lang-ru>{tagRu}</span>
+            <span data-lang-hy>{tagHy}</span>
           </div>
         )}
         <h4>
           <span data-lang-en>{titleEn}</span>
           <span data-lang-ru>{titleRu}</span>
+          <span data-lang-hy>{titleHy}</span>
         </h4>
-        {(descEn || descRu) && (
+        {(descEn || descRu || descHy) && (
           <p>
             <span data-lang-en>{descEn}</span>
             <span data-lang-ru>{descRu}</span>
+            <span data-lang-hy>{descHy}</span>
           </p>
         )}
       </div>

@@ -8,11 +8,12 @@ const books = (await getCollection('books')).sort((a, b) => a.data.order - b.dat
   <div class="wrap">
     <div class="sec-head between reveal">
       <div>
-        <div class="kicker" data-lang-en>Books</div><div class="kicker" data-lang-ru>Книги</div>
-        <h2 data-lang-en>Published & in progress</h2><h2 data-lang-ru>Изданное и в работе</h2>
+        <div class="kicker" data-lang-en>Books</div><div class="kicker" data-lang-ru>Книги</div><div class="kicker" data-lang-hy>Գրքեր</div>
+        <h2 data-lang-en>Published & in progress</h2><h2 data-lang-ru>Изданное и в работе</h2><h2 data-lang-hy>Հրատարակված և ընթացքի մեջ</h2>
       </div>
       <p class="body" data-lang-en>Select a title to open its page — with images and a full description.</p>
       <p class="body" data-lang-ru>Выберите книгу, чтобы открыть её страницу с изображениями и полным описанием.</p>
+      <p class="body" data-lang-hy>Ընտրե՛ք գիրքը՝ բացելու նրա էջը՝ պատկերներով և ամբողջական նկարագրությամբ։</p>
     </div>
     <div class="book-grid">
       {books.map((book) => <BookCard book={book} />)}

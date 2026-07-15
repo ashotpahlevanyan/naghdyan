@@ -62,8 +62,18 @@ header.nav{
 }
 .lang button.active{background:var(--gold);color:#1a1206}
 @media(max-width:820px){
-  .nav-links a{display:none}
-  .brand span.full{display:none}
+  /* Hide the whole container, not the <a>s: the per-language display:revert
+     rules outrank `.nav-links a{display:none}` and would re-show the active
+     language's links, overflowing the header and pushing the lang toggle
+     off-screen. A display:none parent removes the subtree regardless. */
+  .nav-links{display:none}
+  /* Extra specificity (`.nav-inner …`, 0,3,1) so this beats the per-language
+     `html[data-lang] [data-lang-*]{display:revert}` rule (0,2,1); otherwise the
+     active language's brand label re-shows and crowds the toggle on narrow
+     phones. Only the compact N mark stays in the mobile header. */
+  .nav-inner .brand span.full{display:none}
+  .nav-inner{gap:12px}
+  .lang{flex:none}
 }
 
 /* ---------- Hero ---------- */
@@ -290,9 +300,11 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--ink-dim);font
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ---------- Language ---------- */
-[data-lang-ru]{display:none}
+[data-lang-ru],[data-lang-hy]{display:none}
 html[data-lang="ru"] [data-lang-en]{display:none}
 html[data-lang="ru"] [data-lang-ru]{display:revert}
+html[data-lang="hy"] [data-lang-en]{display:none}
+html[data-lang="hy"] [data-lang-hy]{display:revert}
 
 /* =====================================================
    BOOK DETAIL PAGE

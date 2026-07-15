@@ -1,20 +1,21 @@
 import { useEffect, useState } from 'react';
 
-type Lang = 'en' | 'ru';
+type Lang = 'en' | 'ru' | 'hy';
 const STORAGE_KEY = 'naghdyan-lang';
 
 /**
- * EN / RU switch. The whole document is bilingual (both languages are in the
- * DOM); flipping `html[data-lang]` is all that toggles visibility via CSS.
+ * EN / RU / HY switch. The whole document is trilingual (all languages are in
+ * the DOM); flipping `html[data-lang]` is all that toggles visibility via CSS.
  * The choice is remembered in localStorage and applied pre-paint by the inline
  * script in Base.astro, so this island only mirrors and updates that state.
+ * Russian is the default when no choice has been saved yet.
  */
 export default function LangToggle() {
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState<Lang>('ru');
 
   useEffect(() => {
     const current = document.documentElement.getAttribute('data-lang');
-    if (current === 'ru' || current === 'en') setLang(current);
+    if (current === 'ru' || current === 'en' || current === 'hy') setLang(current);
   }, []);
 
   function choose(next: Lang) {
@@ -45,6 +46,14 @@ export default function LangToggle() {
         onClick={() => choose('ru')}
       >
         RU
+      </button>
+      <button
+        type="button"
+        className={lang === 'hy' ? 'active' : ''}
+        aria-pressed={lang === 'hy'}
+        onClick={() => choose('hy')}
+      >
+        HY
       </button>
     </div>
   );
