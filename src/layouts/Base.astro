@@ -23,7 +23,7 @@ const defaultFavicon =
 const favicon = site.favicon || defaultFavicon;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="ru" data-lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,11 +39,12 @@ const favicon = site.favicon || defaultFavicon;
 
     <link rel="icon" href={favicon} />
 
-    {/* Apply the saved language before first paint to avoid a flash of EN. */}
+    {/* Apply the saved language before first paint to avoid a flash. Russian
+        is the default until the visitor picks a language. */}
     <script is:inline>
       (function () {
         try {
-          var l = localStorage.getItem('naghdyan-lang') || 'en';
+          var l = localStorage.getItem('naghdyan-lang') || 'ru';
           document.documentElement.setAttribute('data-lang', l);
           document.documentElement.setAttribute('lang', l);
         } catch (e) {}

@@ -1,6 +1,7 @@
 brand:
   en: Ruben Naghdyan
   ru: Рубен Нагдян
+  hy: Ռուբեն Նաղդյան
 # Optional images — leave empty to use the built-in "N" mark / default favicon /
 # portrait placeholder. Upload via the CMS (stored under /assets/uploads).
 logo: ""
@@ -16,3 +17,4 @@ footer:
   rights:
     en: All rights reserved.
     ru: Все права защищены.
+    hy: Բոլոր իրավունքները պաշտպանված են։

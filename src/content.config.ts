@@ -7,7 +7,7 @@ import { glob } from 'astro/loaders';
  * Files live as YAML under src/content/<collection>/<id>.yaml, and the file
  * name becomes the entry id (books use it as the /books/<id> route).
  */
-const bilingual = z.object({ en: z.string(), ru: z.string() });
+const bilingual = z.object({ en: z.string(), ru: z.string(), hy: z.string() });
 
 const books = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/books' }),

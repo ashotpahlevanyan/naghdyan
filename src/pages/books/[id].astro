@@ -28,7 +28,7 @@ const slides = images.length ? images : cover ? [cover] : [];
   <section class="subpage">
     <div class="wrap">
       <a class="back-link" href="/#books">
-        ← <span data-lang-en>All books</span><span data-lang-ru>Все книги</span>
+        ← <span data-lang-en>All books</span><span data-lang-ru>Все книги</span><span data-lang-hy>Բոլոր գրքերը</span>
       </a>
 
       <div class="book-detail">
@@ -36,25 +36,25 @@ const slides = images.length ? images : cover ? [cover] : [];
 
         <div class="book-meta">
           <div class="kicker">
-            <span data-lang-en>Book · {year}</span><span data-lang-ru>Книга · {year}</span>
+            <span data-lang-en>Book · {year}</span><span data-lang-ru>Книга · {year}</span><span data-lang-hy>Գիրք · {year}</span>
           </div>
-          <h1><T en={title.en} ru={title.ru} /></h1>
-          {subtitle && <div class="b-sub"><T en={subtitle.en} ru={subtitle.ru} /></div>}
+          <h1><T en={title.en} ru={title.ru} hy={title.hy} /></h1>
+          {subtitle && <div class="b-sub"><T en={subtitle.en} ru={subtitle.ru} hy={subtitle.hy} /></div>}
 
           {
             facts.length > 0 && (
               <div class="meta-facts">
                 {facts.map((f) => (
-                  <span><T en={f.en} ru={f.ru} /></span>
+                  <span><T en={f.en} ru={f.ru} hy={f.hy} /></span>
                 ))}
               </div>
             )
           }
 
           <div class="book-desc">
-            <h2><span data-lang-en>About the book</span><span data-lang-ru>О книге</span></h2>
+            <h2><span data-lang-en>About the book</span><span data-lang-ru>О книге</span><span data-lang-hy>Գրքի մասին</span></h2>
             {description.map((p) => (
-              <p><T en={p.en} ru={p.ru} /></p>
+              <p><T en={p.en} ru={p.ru} hy={p.hy} /></p>
             ))}
           </div>
 
@@ -62,7 +62,7 @@ const slides = images.length ? images : cover ? [cover] : [];
             buyLink && (
               <div class="book-actions">
                 <a class="btn btn-primary" href={buyLink} target="_blank" rel="noopener">
-                  <span data-lang-en>Get the book</span><span data-lang-ru>Купить книгу</span>
+                  <span data-lang-en>Get the book</span><span data-lang-ru>Купить книгу</span><span data-lang-hy>Ձեռք բերել գիրքը</span>
                 </a>
               </div>
             )

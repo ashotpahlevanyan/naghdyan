@@ -11,12 +11,15 @@ const { brand, portrait } = site;
     <div class="reveal">
       <span class="eyebrow" data-lang-en>{hero.eyebrow.en}</span>
       <span class="eyebrow" data-lang-ru>{hero.eyebrow.ru}</span>
+      <span class="eyebrow" data-lang-hy>{hero.eyebrow.hy}</span>
 
       <h1 data-lang-en>{brand.en}</h1>
       <h1 data-lang-ru>{brand.ru}</h1>
+      <h1 data-lang-hy>{brand.hy}</h1>
 
       <p class="lede" data-lang-en set:html={inline(hero.lede.en)}></p>
       <p class="lede" data-lang-ru set:html={inline(hero.lede.ru)}></p>
+      <p class="lede" data-lang-hy set:html={inline(hero.lede.hy)}></p>
 
       <div class="hero-tags">
         {
@@ -24,6 +27,7 @@ const { brand, portrait } = site;
             <>
               <span class="tag" data-lang-en>{tag.en}</span>
               <span class="tag" data-lang-ru>{tag.ru}</span>
+              <span class="tag" data-lang-hy>{tag.hy}</span>
             </>
           ))
         }
@@ -31,10 +35,10 @@ const { brand, portrait } = site;
 
       <div class="cta-row">
         <a class="btn btn-primary" href="/#books">
-          <span data-lang-en>{hero.ctaPrimary.en}</span><span data-lang-ru>{hero.ctaPrimary.ru}</span> →
+          <span data-lang-en>{hero.ctaPrimary.en}</span><span data-lang-ru>{hero.ctaPrimary.ru}</span><span data-lang-hy>{hero.ctaPrimary.hy}</span> →
         </a>
         <a class="btn btn-ghost" href="/#contact">
-          <span data-lang-en>{hero.ctaSecondary.en}</span><span data-lang-ru>{hero.ctaSecondary.ru}</span>
+          <span data-lang-en>{hero.ctaSecondary.en}</span><span data-lang-ru>{hero.ctaSecondary.ru}</span><span data-lang-hy>{hero.ctaSecondary.hy}</span>
         </a>
       </div>
     </div>
@@ -48,6 +52,7 @@ const { brand, portrait } = site;
             <b>RN</b>
             <span data-lang-en>Add a portrait photo in the CMS (Site content → Branding).</span>
             <span data-lang-ru>Добавьте фотографию в CMS (Site content → Branding).</span>
+            <span data-lang-hy>Ավելացրե՛ք դիմանկար CMS-ում (Site content → Branding)։</span>
           </div>
         )
       }

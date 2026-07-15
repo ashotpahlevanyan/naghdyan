@@ -7,9 +7,10 @@ const { about } = await getHome();
 <section class="band soft" id="about">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker" data-lang-en>{about.kicker.en}</div><div class="kicker" data-lang-ru>{about.kicker.ru}</div>
+      <div class="kicker" data-lang-en>{about.kicker.en}</div><div class="kicker" data-lang-ru>{about.kicker.ru}</div><div class="kicker" data-lang-hy>{about.kicker.hy}</div>
       <h2 data-lang-en>{about.heading.en}</h2>
       <h2 data-lang-ru>{about.heading.ru}</h2>
+      <h2 data-lang-hy>{about.heading.hy}</h2>
     </div>
     <div class="reveal">
       {
@@ -17,6 +18,7 @@ const { about } = await getHome();
           <>
             <p class="body" data-lang-en set:html={inline(p.en)} />
             <p class="body" data-lang-ru set:html={inline(p.ru)} />
+            <p class="body" data-lang-hy set:html={inline(p.hy)} />
           </>
         ))
       }

@@ -6,9 +6,10 @@ const { focus } = await getHome();
 <section class="band" id="focus">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker" data-lang-en>{focus.kicker.en}</div><div class="kicker" data-lang-ru>{focus.kicker.ru}</div>
+      <div class="kicker" data-lang-en>{focus.kicker.en}</div><div class="kicker" data-lang-ru>{focus.kicker.ru}</div><div class="kicker" data-lang-hy>{focus.kicker.hy}</div>
       <h2 data-lang-en>{focus.heading.en}</h2>
       <h2 data-lang-ru>{focus.heading.ru}</h2>
+      <h2 data-lang-hy>{focus.heading.hy}</h2>
     </div>
 
     <div class="cards">
@@ -16,10 +17,11 @@ const { focus } = await getHome();
         focus.cards.map((card) => (
           <article class="card reveal">
             <div class="ico">{card.icon}</div>
-            <div class="sub" data-lang-en>{card.sub.en}</div><div class="sub" data-lang-ru>{card.sub.ru}</div>
-            <h3 data-lang-en>{card.title.en}</h3><h3 data-lang-ru>{card.title.ru}</h3>
+            <div class="sub" data-lang-en>{card.sub.en}</div><div class="sub" data-lang-ru>{card.sub.ru}</div><div class="sub" data-lang-hy>{card.sub.hy}</div>
+            <h3 data-lang-en>{card.title.en}</h3><h3 data-lang-ru>{card.title.ru}</h3><h3 data-lang-hy>{card.title.hy}</h3>
             <p data-lang-en>{card.body.en}</p>
             <p data-lang-ru>{card.body.ru}</p>
+            <p data-lang-hy>{card.body.hy}</p>
           </article>
         ))
       }

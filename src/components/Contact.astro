@@ -8,22 +8,23 @@ const { email, telegram } = site.contact;
 <section class="band soft" id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
-      <div class="kicker" data-lang-en>{contact.kicker.en}</div><div class="kicker" data-lang-ru>{contact.kicker.ru}</div>
-      <h2 data-lang-en>{contact.heading.en}</h2><h2 data-lang-ru>{contact.heading.ru}</h2>
+      <div class="kicker" data-lang-en>{contact.kicker.en}</div><div class="kicker" data-lang-ru>{contact.kicker.ru}</div><div class="kicker" data-lang-hy>{contact.kicker.hy}</div>
+      <h2 data-lang-en>{contact.heading.en}</h2><h2 data-lang-ru>{contact.heading.ru}</h2><h2 data-lang-hy>{contact.heading.hy}</h2>
       <p class="body" data-lang-en>{contact.body.en}</p>
       <p class="body" data-lang-ru>{contact.body.ru}</p>
+      <p class="body" data-lang-hy>{contact.body.hy}</p>
       <div class="contact-methods">
         {
           email && (
             <a class="btn btn-primary" href={`mailto:${email}`}>
-              <span data-lang-en>Email</span><span data-lang-ru>Написать</span> {email}
+              <span data-lang-en>Email</span><span data-lang-ru>Написать</span><span data-lang-hy>Գրել</span> {email}
             </a>
           )
         }
         {
           telegram && (
             <a class="btn btn-ghost" href={telegram} target="_blank" rel="noopener">
-              <span data-lang-en>Telegram</span><span data-lang-ru>Телеграм</span>
+              <span data-lang-en>Telegram</span><span data-lang-ru>Телеграм</span><span data-lang-hy>Տելեգրամ</span>
             </a>
           )
         }
