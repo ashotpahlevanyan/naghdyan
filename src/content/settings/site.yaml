@@ -2,17 +2,15 @@ brand:
   en: Ruben Naghdyan
   ru: Рубен Нагдян
   hy: Ռուբեն Նաղդյան
-# Optional images — leave empty to use the built-in "N" mark / default favicon /
-# portrait placeholder. Upload via the CMS (stored under /assets/uploads).
-logo: ""
-favicon: ""
-portrait: ""
+logo: https://naghdyan.com/assets/uploads/logo.svg
+favicon: ''
+portrait: ''
 seo:
-  title: "Ruben Naghdyan — Scientist, Psychologist, Founder of Psychoontology"
-  description: "Ruben Naghdyan — scientist and psychologist working in NLP and Emotional-Image Therapy (EOT), and developing psychoontology, a new framework for the study of mind, meaning, and being."
+  title: Ruben Naghdyan — Scientist, Psychologist, Founder of Psychoontology
+  description: Ruben Naghdyan — scientist and psychologist working in NLP and Emotional-Image Therapy (EOT), and developing psychoontology, a new framework for the study of mind, meaning, and being.
 contact:
-  email: "hello@naghdyan.com"
-  telegram: ""
+  email: hello@naghdyan.com
+  telegram: ''
 footer:
   rights:
     en: All rights reserved.
