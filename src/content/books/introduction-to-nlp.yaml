@@ -1,0 +1,23 @@
+order: 6
+slug: introduction-to-nlp
+title:
+  en: Introduction to Neuro-Linguistic Programming
+  ru: Введение в нейро-лингвистическое программирование
+  hy: Նեյրոլեզվաբանական ծրագրավորման ներածություն
+subtitle:
+  en: Books 1 and 2
+  ru: Книги 1 и 2
+  hy: Գրքեր 1 և 2
+year: "2024"
+cover: /assets/uploads/introduction-to-nlp.jpg
+images:
+  - /assets/uploads/introduction-to-nlp.jpg
+facts:
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+    hy: "Լեզուն՝ ռուսերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"

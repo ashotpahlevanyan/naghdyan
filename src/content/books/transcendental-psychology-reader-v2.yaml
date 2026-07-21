@@ -1,0 +1,26 @@
+order: 9
+slug: transcendental-psychology-reader-v2
+title:
+  en: Transcendental Psychology. A Reader
+  ru: Трансцендентальная психология. Хрестоматия
+  hy: Տրանսցենդենտալ հոգեբանություն. Քրեստոմատիա
+subtitle:
+  en: Volume 2
+  ru: Том 2
+  hy: Հատոր 2
+year: "2019"
+cover: /assets/uploads/transcendental-psychology-reader-v2.jpg
+images:
+  - /assets/uploads/transcendental-psychology-reader-v2.jpg
+facts:
+  - en: "Editor and compiler: Ruben Naghdyan"
+    ru: "Редактор-составитель: Рубен Нагдян"
+    hy: "Խմբագիր-կազմող՝ Ռուբեն Նաղդյան"
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+    hy: "Լեզուն՝ ռուսերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"

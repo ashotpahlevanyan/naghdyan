@@ -1,0 +1,23 @@
+order: 14
+slug: riddle-of-the-psyche
+title:
+  en: The Riddle of the Psyche
+  ru: Загадка психики
+  hy: Հոգեկանի հանելուկը
+subtitle:
+  en: Transcendental psychology and metaphysics
+  ru: Трансцендентальная психология и метафизика
+  hy: Տրանսցենդենտալ հոգեբանություն և մետաֆիզիկա
+year: "2017"
+cover: /assets/uploads/riddle-of-the-psyche.jpg
+images:
+  - /assets/uploads/riddle-of-the-psyche.jpg
+facts:
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+    hy: "Լեզուն՝ ռուսերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"
