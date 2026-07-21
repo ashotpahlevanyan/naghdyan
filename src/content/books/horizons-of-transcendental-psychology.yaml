@@ -1,0 +1,20 @@
+order: 5
+slug: horizons-of-transcendental-psychology
+title:
+  en: Horizons of Transcendental Psychology
+  ru: Горизонты трансцендентальной психологии
+  hy: Տրանսցենդենտալ հոգեբանության հորիզոնները
+year: "2024"
+cover: /assets/uploads/horizons-of-transcendental-psychology.jpg
+images:
+  - /assets/uploads/horizons-of-transcendental-psychology.jpg
+  - /assets/uploads/horizons-of-transcendental-psychology-hy.jpg
+facts:
+  - en: "Published in Russian and Armenian"
+    ru: "Издана на русском и армянском языках"
+    hy: "Հրատարակվել է ռուսերեն և հայերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"

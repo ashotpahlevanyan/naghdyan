@@ -1,0 +1,23 @@
+order: 2
+slug: lectures-on-psychoontology
+title:
+  en: Lectures on Psychoontology
+  ru: Лекции по психоонтологии
+  hy: Դասախոսություններ հոգեոնտոլոգիայից
+subtitle:
+  en: Toward an ontology of the unconscious and psychoontological therapy
+  ru: К онтологии бессознательного и психоонтологической терапии
+  hy: Դեպի անգիտակցականի գոյաբանություն և հոգեոնտոլոգիական թերապիա
+year: "2025"
+cover: /assets/uploads/lectures-on-psychoontology.jpg
+images:
+  - /assets/uploads/lectures-on-psychoontology.jpg
+facts:
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+    hy: "Լեզուն՝ ռուսերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"

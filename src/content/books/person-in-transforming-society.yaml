@@ -1,0 +1,22 @@
+order: 18
+slug: person-in-transforming-society
+title:
+  en: The Person in a Transforming Society
+  ru: Личность в трансформирующемся обществе
+  hy: Անձը փոխակերպվող հասարակությունում
+year: "2010"
+cover: /assets/uploads/person-in-transforming-society.jpg
+images:
+  - /assets/uploads/person-in-transforming-society.jpg
+facts:
+  - en: "Co-authored with Gevorg Poghosyan"
+    ru: "В соавторстве с Геворгом Погосяном"
+    hy: "Համահեղինակ՝ Գևորգ Պողոսյան"
+  - en: "Language: Armenian"
+    ru: "Язык: армянский"
+    hy: "Լեզուն՝ հայերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"

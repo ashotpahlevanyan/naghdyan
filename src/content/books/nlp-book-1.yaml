@@ -1,0 +1,23 @@
+order: 13
+slug: nlp-book-1
+title:
+  en: Neuro-Linguistic Programming. Book 1
+  ru: Нейро-лингвистическое программирование. Книга 1
+  hy: Նեյրոլեզվաբանական ծրագրավորում. Գիրք 1
+subtitle:
+  en: History · Philosophy · Practice
+  ru: История · Философия · Практика
+  hy: Պատմություն · Փիլիսոփայություն · Պրակտիկա
+year: "2018"
+cover: /assets/uploads/nlp-book-1.jpg
+images:
+  - /assets/uploads/nlp-book-1.jpg
+facts:
+  - en: "Language: Russian"
+    ru: "Язык: русский"
+    hy: "Լեզուն՝ ռուսերեն"
+buyLink: ""
+description:
+  - en: "Placeholder description — replace with the real synopsis."
+    ru: "Описание-заглушка — замените реальной аннотацией."
+    hy: "Տեղապահ նկարագրություն՝ փոխարինե՛ք իրական անոտացիայով։"
