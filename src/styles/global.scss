@@ -346,5 +346,29 @@ html[data-lang="hy"] [data-lang-hy]{display:revert}
 .book-desc h2{font-size:clamp(22px,3vw,30px);margin-bottom:18px}
 .book-desc p{color:var(--ink-soft);font-size:16.5px;margin-bottom:16px;line-height:1.75}
 .book-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+
+/* Article page — abstract, keywords, embedded paper */
+.article-detail{max-width:820px}
+.article-detail .kicker{margin-bottom:14px}
+.article-detail h1{font-size:clamp(26px,4.4vw,42px);margin-bottom:18px;line-height:1.2}
+.a-authors{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}
+.a-authors span{color:var(--ink-soft);font-size:15.5px}
+.article-detail .a-src{font-size:13px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:6px 14px;display:inline-block;margin-bottom:30px}
+.article-abstract h2{font-size:clamp(20px,2.8vw,26px);margin-bottom:16px}
+.article-abstract p{color:var(--ink-soft);font-size:16.5px;margin-bottom:16px;line-height:1.75}
+.article-keywords{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.article-keywords h3{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.article-keywords p{color:var(--ink-soft);font-size:15.5px;line-height:1.7}
+.article-paper{margin-top:44px}
+.paper-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.paper-head h2{font-size:clamp(20px,2.8vw,26px)}
+.paper-embed{width:100%;height:min(80vh,900px);border:1px solid var(--line);border-radius:10px;background:#fff;display:block}
+.paper-fallback{padding:40px 20px;text-align:center;color:var(--ink-soft)}
+.paper-fallback p{margin-bottom:16px}
+@media(max-width:640px){
+  /* Inline PDF viewers are unusable on phones — show the download CTA instead. */
+  .paper-embed{height:420px}
+}
+
 .empty-state{text-align:center;padding:80px 0;color:var(--ink-soft)}
 .empty-state h1{font-size:32px;margin-bottom:14px}
