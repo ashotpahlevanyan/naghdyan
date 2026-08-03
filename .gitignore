@@ -24,5 +24,8 @@ yarn-error.log*
 # hand-written reference version (kept locally, not committed)
 legacy/
 
+# raw assets dropped for processing into src/content + public/assets (see _inbox/README.md)
+_inbox/
+
 # platform CLI folders
 .vercel
