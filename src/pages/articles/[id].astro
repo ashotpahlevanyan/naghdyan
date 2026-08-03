@@ -1,0 +1,109 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '@layouts/Base.astro';
+import T from '@components/T.astro';
+
+/**
+ * Article page. Only articles without an external `url` get one — those with a
+ * link point straight at the publisher instead (see ArticleRow.astro).
+ */
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles
+    .filter((a) => !a.data.url)
+    .map((article) => ({
+      params: { id: article.id },
+      props: { article },
+    }));
+}
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+const { article } = Astro.props;
+const { title, source, date, authors, abstract, keywords, pdf } = article.data;
+---
+<Base
+  title={`${title.en} — Ruben Naghdyan`}
+  ogTitle={`${title.en} — Ruben Naghdyan`}
+  description={abstract.length ? abstract[0].en.slice(0, 180) : `${title.en} — a paper by Ruben Naghdyan.`}
+>
+  <section class="subpage">
+    <div class="wrap">
+      <a class="back-link" href="/#articles">
+        ← <span data-lang-en>All articles</span><span data-lang-ru>Все статьи</span><span data-lang-hy>Բոլոր հոդվածները</span>
+      </a>
+
+      <article class="article-detail">
+        <div class="kicker">
+          <span data-lang-en>Article · {date}</span><span data-lang-ru>Статья · {date}</span><span data-lang-hy>Հոդված · {date}</span>
+        </div>
+        <h1><T en={title.en} ru={title.ru} hy={title.hy} /></h1>
+
+        {
+          authors.length > 0 && (
+            <div class="a-authors">
+              {authors.map((a) => (
+                <span><T en={a.en} ru={a.ru} hy={a.hy} /></span>
+              ))}
+            </div>
+          )
+        }
+
+        {source && <div class="a-src"><T en={source.en} ru={source.ru} hy={source.hy} /></div>}
+
+        {
+          abstract.length > 0 && (
+            <div class="article-abstract">
+              <h2>
+                <span data-lang-en>Abstract</span><span data-lang-ru>Аннотация</span><span data-lang-hy>Ամփոփագիր</span>
+              </h2>
+              {abstract.map((p) => (
+                <p><T en={p.en} ru={p.ru} hy={p.hy} /></p>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          keywords && (
+            <div class="article-keywords">
+              <h3>
+                <span data-lang-en>Keywords</span><span data-lang-ru>Ключевые слова</span><span data-lang-hy>Հիմնաբառեր</span>
+              </h3>
+              <p><T en={keywords.en} ru={keywords.ru} hy={keywords.hy} /></p>
+            </div>
+          )
+        }
+
+        {
+          pdf && (
+            <div class="article-paper">
+              <div class="paper-head">
+                <h2>
+                  <span data-lang-en>Full paper</span><span data-lang-ru>Полный текст</span><span data-lang-hy>Ամբողջական տեքստը</span>
+                </h2>
+                <a class="btn btn-primary" href={pdf} download>
+                  <span data-lang-en>Download PDF</span><span data-lang-ru>Скачать PDF</span><span data-lang-hy>Ներբեռնել PDF</span>
+                </a>
+              </div>
+
+              <object class="paper-embed" data={pdf} type="application/pdf">
+                <div class="paper-fallback">
+                  <p>
+                    <span data-lang-en>Your browser can’t display the PDF inline.</span>
+                    <span data-lang-ru>Ваш браузер не может показать PDF на странице.</span>
+                    <span data-lang-hy>Ձեր զննարկիչը չի կարող PDF-ը ցուցադրել էջում։</span>
+                  </p>
+                  <a class="btn" href={pdf} target="_blank" rel="noopener">
+                    <span data-lang-en>Open the PDF</span><span data-lang-ru>Открыть PDF</span><span data-lang-hy>Բացել PDF-ը</span>
+                  </a>
+                </div>
+              </object>
+            </div>
+          )
+        }
+      </article>
+    </div>
+  </section>
+</Base>

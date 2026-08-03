@@ -8,10 +8,12 @@ interface Props {
 const { article } = Astro.props;
 const { title, source, date, url } = article.data;
 const external = /^https?:/i.test(url);
+/** No external link → the article has its own page built from abstract + PDF. */
+const href = external ? url : `/articles/${article.id}`;
 ---
 <a
   class="article-row reveal"
-  href={url}
+  href={href}
   {...external ? { target: '_blank', rel: 'noopener' } : {}}
 >
   <span class="a-date">{date}</span>
@@ -19,5 +21,5 @@ const external = /^https?:/i.test(url);
     <h4><T en={title.en} ru={title.ru} hy={title.hy} /></h4>
     {source && <span class="a-source"><T en={source.en} ru={source.ru} hy={source.hy} /></span>}
   </span>
-  <span class="a-arrow">↗</span>
+  <span class="a-arrow">{external ? '↗' : '→'}</span>
 </a>

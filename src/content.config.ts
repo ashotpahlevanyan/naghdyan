@@ -31,7 +31,16 @@ const articles = defineCollection({
     title: bilingual,
     source: bilingual.optional(),
     date: z.coerce.string(),
-    url: z.string().default('#'),
+    /**
+     * External link. When empty the article gets its own page at
+     * /articles/<id> instead, built from `abstract` + `pdf` below.
+     */
+    url: z.string().default(''),
+    authors: z.array(bilingual).default([]),
+    abstract: z.array(bilingual).default([]),
+    keywords: bilingual.optional(),
+    /** Path under /assets/uploads to the full paper, embedded on its page. */
+    pdf: z.string().default(''),
   }),
 });
 

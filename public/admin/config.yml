@@ -336,7 +336,48 @@ collections:
           - { name: ru, label: Русский, widget: string, required: false }
           - { name: hy, label: Հայերեն, widget: string, required: false }
       - { name: date, label: Date / year, widget: string }
-      - { name: url, label: Link URL, widget: string, default: '#' }
+      - name: url
+        label: External link
+        widget: string
+        required: false
+        default: ''
+        hint: >-
+          Leave empty to give the article its own page on the site (built from
+          the abstract and PDF below). Fill it in only to link straight out to
+          a publisher.
+      - name: authors
+        label: Authors
+        widget: list
+        required: false
+        summary: '{{fields.en}}'
+        fields:
+          - { name: en, label: English, widget: string }
+          - { name: ru, label: Русский, widget: string }
+          - { name: hy, label: Հայերեն, widget: string }
+      - name: abstract
+        label: Abstract
+        widget: list
+        required: false
+        summary: '{{fields.en}}'
+        hint: One entry per paragraph.
+        fields:
+          - { name: en, label: English, widget: text }
+          - { name: ru, label: Русский, widget: text }
+          - { name: hy, label: Հայերեն, widget: text }
+      - name: keywords
+        label: Keywords
+        widget: object
+        required: false
+        fields:
+          - { name: en, label: English, widget: string, required: false }
+          - { name: ru, label: Русский, widget: string, required: false }
+          - { name: hy, label: Հայերեն, widget: string, required: false }
+      - name: pdf
+        label: Full paper (PDF)
+        widget: file
+        required: false
+        default: ''
+        hint: Embedded on the article page with a download button.
 
   # ----------------------------------------------------------- LECTURES
   - name: lectures
