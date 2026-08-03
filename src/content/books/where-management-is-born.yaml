@@ -1,0 +1,30 @@
+order: 3
+slug: where-management-is-born
+title:
+  en: "Where Does Management Come From"
+  ru: "Откуда рождается управление"
+  hy: "Որտեղից է ծնվում կառավարումը"
+subtitle:
+  en: "New horizons of psychoontology"
+  ru: "Новые горизонты психоонтологии"
+  hy: "Հոգեգոյաբանության նոր հորիզոններ"
+year: "2026"
+cover: "/assets/uploads/where-management-is-born.jpg"
+images:
+  - "/assets/uploads/where-management-is-born.jpg"
+  - "/assets/uploads/where-management-is-born-back.jpg"
+facts:
+  - en: "With A. H. Karapetyan"
+    ru: "В соавторстве с А. Г. Карапетян"
+    hy: "Ա. Հ. Կարապետյանի հետ համահեղինակությամբ"
+  - en: "Language: Armenian"
+    ru: "Язык: армянский"
+    hy: "Լեզուն՝ հայերեն"
+  - en: "ISBN 978-9939-966-77-9"
+    ru: "ISBN 978-9939-966-77-9"
+    hy: "ISBN 978-9939-966-77-9"
+buyLink: ''
+description:
+  - en: "The book Where Does Management Come From is an interdisciplinary study in which management is examined at the level of the ontological foundations of the psyche and of reality. Unlike classical approaches that emphasize skills and rational decision-making, the work proposes to understand management as a mode of organizing reality that flows from the ontological position of the managing subject."
+    ru: "Книга «Откуда рождается управление» представляет собой междисциплинарное исследование, в котором управление рассматривается на уровне онтологических оснований психики и реальности. В отличие от классических подходов, которые делают акцент на навыках и рациональных решениях, работа предлагает понимать управление как способ организации реальности, вытекающий из онтологической позиции управляющего субъекта."
+    hy: "«Որտեղից է ծնվում կառավարումը» գիրքը միջառարկայական ուսումնասիրություն է, որտեղ կառավարումը դիտարկվում է հոգեկանի և իրականության գոյաբանական հիմքերի մակարդակում։ Ի տարբերություն դասական մոտեցումների, որոնք շեշտում են հմտությունները և ռացիոնալ որոշումները, աշխատությունն առաջարկում է կառավարումը հասկանալ որպես իրականության կազմակերպման եղանակ, որը բխում է ղեկավար սուբյեկտի գոյաբանական դիրքից։"
