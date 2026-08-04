@@ -69,6 +69,14 @@ const site = defineCollection({
     seo: z.object({
       title: z.string(),
       description: z.string(),
+      /** Share card (1200×630), used for og:image / twitter:image. */
+      image: z.string().default('/assets/og.png'),
+      /**
+       * Profile URLs (YouTube, Google Scholar, ResearchGate, ORCID, Wikidata,
+       * social). These become schema.org `sameAs` — the strongest signal tying
+       * this site to the person behind a name search.
+       */
+      sameAs: z.array(z.string()).default([]),
     }),
     contact: z.object({
       email: z.string().default(''),

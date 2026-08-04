@@ -2,6 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from '@layouts/Base.astro';
 import T from '@components/T.astro';
+import { getSite } from '@lib/content';
+import { graph, personNode, PERSON_ID } from '@lib/seo';
 
 /**
  * Article page. Only articles without an external `url` get one — those with a
@@ -22,11 +24,51 @@ interface Props {
 }
 const { article } = Astro.props;
 const { title, source, date, authors, abstract, keywords, pdf } = article.data;
+
+const site = await getSite();
+const summary = abstract.length
+  ? abstract[0].en.replace(/\*\*|\*/g, '').slice(0, 300)
+  : `${title.en} — a paper by Ruben Naghdyan.`;
+const url = new URL(Astro.url.pathname, 'https://naghdyan.com').href;
+
+const jsonLd = graph([
+  personNode(site),
+  {
+    '@type': 'ScholarlyArticle',
+    '@id': `${url}#article`,
+    headline: title.en,
+    alternateName: [title.ru, title.hy],
+    // Only Ruben resolves to the shared Person node. Co-author entries are
+    // written "Name — role, affiliation", so split on the em dash rather than
+    // shoving the whole credit line into `name`.
+    author: authors.length
+      ? authors.map((a) => {
+          if (/naghdyan/i.test(a.en)) return { '@id': PERSON_ID };
+          const [name, ...rest] = a.en.split('—');
+          return {
+            '@type': 'Person',
+            name: name.trim(),
+            ...(rest.length ? { description: rest.join('—').trim() } : {}),
+          };
+        })
+      : [{ '@id': PERSON_ID }],
+    datePublished: date,
+    inLanguage: ['ru', 'en', 'hy'],
+    abstract: summary,
+    ...(keywords ? { keywords: keywords.en } : {}),
+    ...(source ? { publisher: { '@type': 'Organization', name: source.en } } : {}),
+    ...(pdf ? { encoding: { '@type': 'MediaObject', contentUrl: new URL(pdf, 'https://naghdyan.com').href, encodingFormat: 'application/pdf' } } : {}),
+    mainEntityOfPage: url,
+    url,
+  },
+]);
 ---
 <Base
   title={`${title.en} — Ruben Naghdyan`}
   ogTitle={`${title.en} — Ruben Naghdyan`}
-  description={abstract.length ? abstract[0].en.slice(0, 180) : `${title.en} — a paper by Ruben Naghdyan.`}
+  description={summary}
+  ogType="article"
+  jsonLd={jsonLd}
 >
   <section class="subpage">
     <div class="wrap">

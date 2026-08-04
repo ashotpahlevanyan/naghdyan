@@ -45,6 +45,14 @@ collections:
             fields:
               - { name: title, label: Page title, widget: string }
               - { name: description, label: Meta description, widget: text }
+              - { name: image, label: Share image (1200×630), widget: image, required: false, default: "/assets/og.png", hint: "Shown when a link to the site is posted on social media or messengers." }
+              - name: sameAs
+                label: Profile links elsewhere
+                widget: list
+                required: false
+                summary: "{{fields.url}}"
+                hint: "YouTube, Google Scholar, ResearchGate, ORCID, Wikidata, social profiles. These tell Google that this site is the same Ruben Naghdyan."
+                field: { name: url, label: URL, widget: string }
           - name: contact
             label: Contact methods
             widget: object

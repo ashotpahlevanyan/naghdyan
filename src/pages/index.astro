@@ -9,10 +9,16 @@ import Articles from '@components/Articles.astro';
 import Lectures from '@components/Lectures.astro';
 import Contact from '@components/Contact.astro';
 import { getSite } from '@lib/content';
+import { graph, personNode, websiteNode } from '@lib/seo';
 
 const site = await getSite();
+
+const jsonLd = graph([
+  personNode(site),
+  { ...websiteNode(site), mainEntity: { '@id': 'https://naghdyan.com/#person' } },
+]);
 ---
-<Base title={site.seo.title}>
+<Base title={site.seo.title} jsonLd={jsonLd}>
   <span id="top"></span>
   <Hero />
   <About />
