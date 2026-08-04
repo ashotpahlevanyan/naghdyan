@@ -1,10 +1,12 @@
 ---
 import Brand from './Brand.astro';
 import LangToggle from './LangToggle.tsx';
+import MobileMenu from './MobileMenu.tsx';
 
 /**
  * Sticky top navigation. Links are absolute (`/#about`) so they work from the
- * book detail pages too. The EN/RU switch is the only interactive island.
+ * book detail pages too. Below 1024px `.nav-links` is hidden and the same links
+ * are served by the <MobileMenu> hamburger panel.
  */
 const links = [
   { href: '/#about', en: 'About', ru: 'Обо мне', hy: 'Իմ մասին' },
@@ -29,6 +31,9 @@ const links = [
         ))
       }
     </nav>
-    <LangToggle client:load />
+    <div class="nav-actions">
+      <LangToggle client:load />
+      <MobileMenu links={links} client:load />
+    </div>
   </div>
 </header>

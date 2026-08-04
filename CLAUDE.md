@@ -98,11 +98,19 @@ languages until real copy is supplied.
 - **CSS specificity vs `display:revert`.** The language rules use
   `html[data-lang="ru"] [data-lang-ru]{display:revert}` (specificity 0,2,1).
   Any rule that tries to *hide* a translated node on mobile must **out-specify**
-  that, or the active-language node re-appears. Two fixes live in the mobile nav
-  block (`@media(max-width:820px)`): hide the whole `.nav-links` **container**
-  (a `display:none` parent beats child `revert`), and use
-  `.nav-inner .brand span.full` (0,3,1) to hide the brand label. Don't
+  that, or the active-language node re-appears. Three fixes live in the mobile
+  nav: hide the whole `.nav-links` **container** at `max-width:1024px`
+  (a `display:none` parent beats child `revert`); use
+  `.nav-inner .brand span.full` (0,3,1) at `max-width:820px` to hide the brand
+  label; and close `.mobile-menu` with `visibility:hidden` (an invisible
+  ancestor hides the subtree whatever `display` the children compute to). Don't
   "simplify" these back to lower-specificity selectors.
+- **Mobile nav = hamburger below 1024px.** `MobileMenu.tsx` (React island in
+  `Nav.astro`) renders the burger + drop-down panel; it repeats the same `links`
+  array, trilingual as usual. The panel is a **column flex** container on
+  purpose: `display:revert` leaves the links `inline`, and flex children get
+  blockified so their padding actually makes rows. It also locks body scroll
+  (`body.menu-open`) and closes on Esc / link click / resize past 1024.
 - **Dev server `jsxDEV is not a function`.** A stale Vite dep cache makes React
   islands fail to hydrate (toggle/back-to-top silently vanish). Fix:
   `rm -rf node_modules/.vite` and restart `npm run dev`. Not a code bug; doesn't
