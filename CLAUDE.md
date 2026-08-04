@@ -87,11 +87,13 @@ languages until real copy is supplied.
 - `src/components/Nav.astro`, `Brand.astro`, `Footer.astro` — chrome.
 - `src/components/T.astro` — trilingual text helper.
 - `src/components/LangToggle.tsx` — the EN/RU/HY switch (React island).
+- `src/components/MobileMenu.tsx` — hamburger nav below 1024px (React island).
 - `src/components/VideoCard.tsx` — click-to-load YouTube/Vimeo (privacy-friendly).
 - `src/styles/global.scss` — all styling (single global sheet), incl. the
   language toggle rules and the responsive nav.
 - `src/lib/` — `content.ts` (getSite/getHome helpers), `richtext.ts`
-  (`inline()` renders **bold**/*italic*), `video.ts` (thumb/embed URLs).
+  (`inline()` renders **bold**/*italic*), `video.ts` (thumb/embed URLs),
+  `seo.ts` (schema.org Person/WebSite nodes; see `docs/seo-backlog.md`).
 
 ## Gotchas learned the hard way
 
