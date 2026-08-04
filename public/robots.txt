@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# The CMS is a private editing UI, not content — keep it out of the index.
+Disallow: /admin/
+
+Sitemap: https://naghdyan.com/sitemap-index.xml

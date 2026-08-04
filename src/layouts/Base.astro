@@ -9,6 +9,12 @@ interface Props {
   title: string;
   description?: string;
   ogTitle?: string;
+  /** og:type — 'website' for the homepage, 'book'/'article' for detail pages. */
+  ogType?: string;
+  /** Absolute-from-root path to the share image; falls back to the site card. */
+  image?: string;
+  /** schema.org node(s) for this page, emitted as JSON-LD. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const site = await getSite();
@@ -16,7 +22,21 @@ const {
   title,
   description = site.seo.description,
   ogTitle = 'Ruben Naghdyan — Founder of Psychoontology',
+  ogType = 'website',
+  image = site.seo.image,
+  jsonLd,
 } = Astro.props;
+
+/** Per-page canonical + og:url. Astro.site is https://naghdyan.com. */
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+
+/**
+ * `</script>` inside a JSON string would close the tag early, so escape `<`.
+ * Everything here is our own content, but the escape keeps it robust to any
+ * angle bracket a CMS editor types into a description.
+ */
+const jsonLdHtml = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null;
 
 const defaultFavicon =
   'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230e1420%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 font-family=%22Georgia,serif%22 text-anchor=%22middle%22 fill=%22%23c9a86a%22>N</text></svg>';
@@ -30,14 +50,30 @@ const favicon = site.favicon || defaultFavicon;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Ruben Naghdyan" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <link rel="canonical" href={canonical} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Ruben Naghdyan" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://naghdyan.com" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {/* The page itself is trilingual; Russian is what a cold visitor sees. */}
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="hy_AM" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="theme-color" content="#0e1420" />
 
     <link rel="icon" href={favicon} />
+
+    {jsonLdHtml && <script type="application/ld+json" is:inline set:html={jsonLdHtml} />}
 
     {/* Apply the saved language before first paint to avoid a flash. Russian
         is the default until the visitor picks a language. */}
