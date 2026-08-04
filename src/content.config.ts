@@ -77,6 +77,12 @@ const site = defineCollection({
        * this site to the person behind a name search.
        */
       sameAs: z.array(z.string()).default([]),
+      /**
+       * The token from Search Console's "HTML tag" verification method — just
+       * the content="…" value, not the whole tag. Empty means no tag is
+       * emitted.
+       */
+      googleSiteVerification: z.string().default(''),
     }),
     contact: z.object({
       email: z.string().default(''),
