@@ -13,6 +13,10 @@ seo:
   # ResearchGate, ORCID, Wikidata, social). Each one helps Google connect a
   # search for the name to this site — please fill these in.
   sameAs: []
+  # Paste the token from Search Console → "HTML tag" verification (just the
+  # content="..." value). Verifying the site is what makes Google report where
+  # the name ranks and lets you submit the sitemap.
+  googleSiteVerification: ''
 contact:
   email: hello@naghdyan.com
   telegram: ''

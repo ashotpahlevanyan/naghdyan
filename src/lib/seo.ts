@@ -13,8 +13,31 @@ const SITE = 'https://naghdyan.com';
 export const PERSON_ID = `${SITE}/#person`;
 
 type SiteSeo = {
-  seo: { title: string; description: string; image: string; sameAs: string[] };
+  seo: {
+    title: string;
+    description: string;
+    image: string;
+    sameAs: string[];
+    googleSiteVerification?: string;
+  };
   portrait?: string;
+};
+
+/**
+ * His academic home, per the institution's own staff listing
+ * (isec.am/ru/departments/psychology.html). An affiliation Google can resolve
+ * to a real organization is a strong identity anchor for a name search.
+ */
+const ISEC = {
+  '@type': 'CollegeOrUniversity',
+  '@id': 'https://www.isec.am/#organization',
+  name: 'International Scientific-Educational Center of the National Academy of Sciences of the Republic of Armenia',
+  alternateName: [
+    'Международный научно-образовательный центр НАН РА',
+    'ISEC NAS RA',
+    'МНОЦ НАН РА',
+  ],
+  url: 'https://www.isec.am/',
 };
 
 export function personNode(site: SiteSeo) {
@@ -33,7 +56,14 @@ export function personNode(site: SiteSeo) {
       'Naghdyan Ruben',
       'Нагдян Рубен',
     ],
-    jobTitle: ['Scientist', 'Psychologist'],
+    jobTitle: ['Professor', 'Scientist', 'Psychologist'],
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'degree',
+      name: 'Doctor of Psychological Sciences',
+    },
+    affiliation: ISEC,
+    worksFor: ISEC,
     description: site.seo.description,
     url: SITE,
     image: new URL(site.portrait || site.seo.image, SITE).href,

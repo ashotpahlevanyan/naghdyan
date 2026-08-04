@@ -53,6 +53,7 @@ collections:
                 summary: "{{fields.url}}"
                 hint: "YouTube, Google Scholar, ResearchGate, ORCID, Wikidata, social profiles. These tell Google that this site is the same Ruben Naghdyan."
                 field: { name: url, label: URL, widget: string }
+              - { name: googleSiteVerification, label: Google Search Console token, widget: string, required: false, hint: "From Search Console → HTML tag verification. Paste ONLY the content=\"...\" value, not the whole tag." }
           - name: contact
             label: Contact methods
             widget: object
