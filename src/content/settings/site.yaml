@@ -16,7 +16,7 @@ seo:
   # Paste the token from Search Console → "HTML tag" verification (just the
   # content="..." value). Verifying the site is what makes Google report where
   # the name ranks and lets you submit the sitemap.
-  googleSiteVerification: ''
+  googleSiteVerification: 'ZggEoXP5rmHbKSEWYFU11VmGWmlzf4UpXveFTONcoZk'
 contact:
   email: hello@naghdyan.com
   telegram: ''
