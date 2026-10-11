@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/books/:id([^/.]+)", "destination": "/books/:id/", "permanent": true },
+    { "source": "/articles/:id([^/.]+)", "destination": "/articles/:id/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/auth", "destination": "/api/auth" },
     { "source": "/callback", "destination": "/api/callback" }
