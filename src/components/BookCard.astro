@@ -9,7 +9,7 @@ interface Props {
 const { book } = Astro.props;
 const { title, subtitle, year, cover } = book.data;
 ---
-<a class="book-card reveal" href={`/books/${book.id}`}>
+<a class="book-card reveal" href={`/books/${book.id}/`}>
   <div class="book-cover">
     <SmartImg src={cover} alt={title.en} />
   </div>

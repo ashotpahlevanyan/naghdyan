@@ -9,7 +9,7 @@ const { article } = Astro.props;
 const { title, source, date, url } = article.data;
 const external = /^https?:/i.test(url);
 /** No external link → the article has its own page built from abstract + PDF. */
-const href = external ? url : `/articles/${article.id}`;
+const href = external ? url : `/articles/${article.id}/`;
 ---
 <a
   class="article-row reveal"
